@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'headline_tester',
     'press_release_mailer',  # New: Contact management & email distribution
     'brand_tracking',  # New: Brand tracking tool
+    'public_pages',  # Public landing and about pages
 ]
 
 MIDDLEWARE = [

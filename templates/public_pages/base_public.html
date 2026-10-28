@@ -1,100 +1,183 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Testlane{% endblock %}</title>
+    <title>{% block title %}Testlane AI - Autonomous Audience & PR Intelligence{% endblock %}</title>
+    <meta name="description" content="Testlane AI simulates synthetic audience responses, scores press releases, and tests headlines before publication using advanced agentic AI models.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
                     colors: {
-                        primary: '#1f2937',
-                        secondary: '#3b82f6',
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        dark: {
+                            800: '#0f172a',
+                            900: '#090d16',
+                            950: '#030712',
+                        }
                     }
                 }
             }
         }
     </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            background-color: #090d16;
+            color: #f8fafc;
+        }
+        .glow-blue {
+            box-shadow: 0 0 50px -12px rgba(37, 99, 235, 0.35);
+        }
+        .glow-card:hover {
+            box-shadow: 0 0 35px -8px rgba(59, 130, 246, 0.25);
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
 </head>
-<body class="bg-gray-50 min-h-screen flex flex-col">
-    <!-- Public Navigation -->
-    <nav class="bg-white shadow-sm border-b">
+<body class="min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-dark-900/80 border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="{% url 'landing' %}" class="text-xl font-bold text-primary">
-                        Testlane
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <div class="flex items-center space-x-3">
+                    <a href="{% url 'landing' %}" class="flex items-center space-x-3 group">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform duration-200">
+                            <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <span class="text-2xl font-extrabold tracking-tight text-white">
+                            Testlane<span class="text-brand-500">.ai</span>
+                        </span>
                     </a>
-                    <div class="ml-10 flex space-x-8">
-                        <a href="{% url 'landing' %}" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">
-                            Home
-                        </a>
-                        <a href="{% url 'about' %}" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">
-                            About Us
-                        </a>
-                    </div>
+                    
+                    <!-- Desktop Nav Links -->
+                    <nav class="hidden md:flex items-center space-x-1 pl-10">
+                        <a href="{% url 'landing' %}#features" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition">Capabilities</a>
+                        <a href="{% url 'landing' %}#agentic-demo" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition">Live Simulation</a>
+                        <a href="{% url 'landing' %}#video-tour" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition">Product Video</a>
+                        <a href="{% url 'about' %}" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition">About</a>
+                    </nav>
                 </div>
+
+                <!-- Auth Buttons -->
                 <div class="flex items-center space-x-4">
                     {% if user.is_authenticated %}
-                        <a href="{% url 'home' %}" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">
+                        <a href="{% url 'home' %}" class="text-sm font-semibold text-slate-200 hover:text-white px-3 py-2">
                             Dashboard
                         </a>
-                        <a href="{% url 'logout' %}" class="bg-secondary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">
-                            Logout
+                        <a href="{% url 'logout' %}" class="px-4 py-2 text-sm font-semibold text-slate-300 hover:text-white border border-slate-700 hover:border-slate-500 rounded-lg transition">
+                            Sign Out
                         </a>
                     {% else %}
-                        <a href="{% url 'login' %}" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">
-                            Login
+                        <a href="{% url 'login' %}" class="text-sm font-semibold text-slate-300 hover:text-white px-3 py-2 transition">
+                            Log In
                         </a>
-                        <a href="{% url 'signup' %}" class="bg-secondary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">
-                            Sign Up
+                        <a href="{% url 'signup' %}" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden rounded-xl font-medium group">
+                            <span class="w-full h-full bg-gradient-to-br from-brand-600 via-indigo-600 to-brand-400 group-hover:from-brand-500 group-hover:to-indigo-500 absolute"></span>
+                            <span class="relative px-5 py-2.5 transition-all ease-out bg-dark-900 rounded-[10px] group-hover:bg-opacity-0 text-sm font-semibold text-white">
+                                Start Free Trial
+                            </span>
                         </a>
                     {% endif %}
                 </div>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Main Content -->
+    <!-- Main Viewport -->
     <main class="flex-grow">
-        {% block content %}
-        {% endblock %}
+        {% block content %}{% endblock %}
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-primary text-white py-8">
+    <!-- Global Footer -->
+    <footer class="bg-dark-950 border-t border-slate-800/80 text-slate-400 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Testlane</h3>
-                    <p class="text-gray-400 text-sm">
-                        AI-powered tools for PR professionals and marketers.
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-1">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center">
+                            <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Testlane<span class="text-brand-500">.ai</span></span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                        Agentic market simulation and PR intelligence. Validate messaging, headlines, and strategic press releases before you publish.
                     </p>
+                    <div class="text-xs text-slate-500 font-mono">
+                        Powered by Semilattice AI & LLM synthetic cohorts.
+                    </div>
                 </div>
+
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="{% url 'landing' %}" class="hover:text-white">Home</a></li>
-                        <li><a href="{% url 'about' %}" class="hover:text-white">About Us</a></li>
-                        <li><a href="{% url 'login' %}" class="hover:text-white">Login</a></li>
+                    <h4 class="text-sm font-semibold text-white tracking-wider uppercase mb-4">Capabilities</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="{% url 'landing' %}#features" class="hover:text-white transition">Synthetic Audience Simulation</a></li>
+                        <li><a href="{% url 'landing' %}#features" class="hover:text-white transition">Press Release Scorer</a></li>
+                        <li><a href="{% url 'landing' %}#features" class="hover:text-white transition">Headline A/B Optimizer</a></li>
+                        <li><a href="{% url 'landing' %}#features" class="hover:text-white transition">Demographic Cohort Tracking</a></li>
                     </ul>
                 </div>
+
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
-                    <p class="text-gray-400 text-sm">
-                        Questions? Get in touch with us.
-                    </p>
+                    <h4 class="text-sm font-semibold text-white tracking-wider uppercase mb-4">Platform</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="{% url 'landing' %}#agentic-demo" class="hover:text-white transition">Interactive Demo</a></li>
+                        <li><a href="{% url 'landing' %}#video-tour" class="hover:text-white transition">Product Video</a></li>
+                        <li><a href="{% url 'about' %}" class="hover:text-white transition">About Testlane Ltd</a></li>
+                        <li><a href="{% url 'login' %}" class="hover:text-white transition">Client Portal</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold text-white tracking-wider uppercase mb-4">Contact & Inquiries</h4>
+                    <p class="text-sm text-slate-400 mb-2">Have questions or custom cohort requirements?</p>
+                    <a href="mailto:stuart@testlane.ai" class="text-sm text-brand-400 hover:text-brand-300 font-medium">stuart@testlane.ai</a>
+                    <div class="mt-4 text-xs text-slate-500">
+                        Registered in England & Wales.<br>Testlane Ltd.
+                    </div>
                 </div>
             </div>
-            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
-                &copy; {% now "Y" %} Testlane. All rights reserved.
+
+            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div>
+                    &copy; {% now "Y" %} Testlane Ltd. All rights reserved.
+                </div>
+                <div class="flex space-x-6">
+                    <span class="inline-flex items-center text-xs text-emerald-400 font-mono">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse mr-2"></span>
+                        Semilattice API Operational
+                    </span>
+                </div>
             </div>
         </div>
     </footer>
 
-    {% block scripts %}
-    {% endblock %}
+    {% block scripts %}{% endblock %}
 </body>
 </html>

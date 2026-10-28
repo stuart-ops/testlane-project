@@ -1,118 +1,489 @@
 {% extends 'public_pages/base_public.html' %}
+{% load static %}
 
-{% block title %}Testlane - AI-Powered PR & Marketing Tools{% endblock %}
+{% block title %}Testlane AI - Autonomous Audience & PR Intelligence{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
-<section class="bg-gradient-to-r from-primary to-gray-800 text-white py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
-            AI-Powered Tools for PR & Marketing Professionals
+<section class="relative overflow-hidden pt-20 pb-28 md:pt-28 md:pb-36 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900 border-b border-slate-800/80">
+    <!-- Ambient Glow Background -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-brand-600/20 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute top-1/3 left-1/4 w-[400px] h-[300px] bg-indigo-500/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <!-- Status Pill -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-8">
+            <span class="flex h-2 w-2 rounded-full bg-brand-400 animate-pulse"></span>
+            Testlane 2.0 • Autonomous Synthetic Cohorts
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.1] mb-8">
+            Predict How The World Responds <br class="hidden sm:block">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-400 via-indigo-300 to-white">
+                Before You Publish.
+            </span>
         </h1>
-        <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Leverage the power of AI to simulate audience responses, score press releases,
-            test headlines, and track brand perception across different demographics.
+
+        <!-- Subheadline -->
+        <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10 font-normal">
+            Testlane AI deploys agentic synthetic populations to simulate real-world audience reactions, score press releases, and optimize headlines in seconds — with empirical precision.
         </p>
-        <div class="flex justify-center space-x-4">
+
+        <!-- Call to Actions -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <a href="#agentic-demo" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-brand-600 hover:bg-brand-500 shadow-lg shadow-brand-600/30 hover:shadow-brand-500/50 transition-all duration-200">
+                <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Try Interactive Simulation
+            </a>
+            <a href="#video-tour" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-slate-600 transition-all duration-200">
+                Watch Product Video
+            </a>
+            {% if not user.is_authenticated %}
+                <a href="{% url 'signup' %}" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-brand-400 hover:text-white transition">
+                    Create Account &rarr;
+                </a>
+            {% endif %}
+        </div>
+
+        <!-- Social Proof Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto pt-8 border-t border-slate-800/60">
+            <div>
+                <div class="text-3xl font-bold text-white font-mono">98.4%</div>
+                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Cohort Accuracy</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-brand-400 font-mono">140ms</div>
+                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Inference Speed</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-white font-mono">10,000+</div>
+                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Simulated Agents</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-emerald-400 font-mono">10x</div>
+                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Cost Reduction</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Video Tour Section -->
+<section id="video-tour" class="py-24 bg-dark-900 border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <span class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Platform Walkthrough</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">See Agentic Intelligence in Action</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto mt-3 text-base">
+                Watch Testlane AI synthesize 2,500 enterprise buyer perspectives, score resonance, and deliver strategic guidance.
+            </p>
+        </div>
+
+        <!-- Video Mockup Frame -->
+        <div class="relative rounded-2xl p-2 sm:p-3 bg-gradient-to-b from-slate-700/50 to-slate-800/20 border border-slate-700 shadow-2xl glow-blue">
+            <!-- Window Titlebar -->
+            <div class="flex items-center justify-between px-4 py-2.5 bg-dark-950/90 rounded-t-xl border-b border-slate-800">
+                <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                </div>
+                <div class="text-xs font-mono text-slate-400 flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5 text-brand-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    testlane.ai / agentic_session_uk_b2b.mp4
+                </div>
+                <div class="text-xs text-slate-500 font-mono">1080p 60fps</div>
+            </div>
+
+            <!-- Video Player -->
+            <div class="relative bg-black rounded-b-xl overflow-hidden aspect-video flex items-center justify-center">
+                <video id="demoVideo" class="w-full h-full object-cover" autoplay loop muted playsinline controls>
+                    <source src="/media/testlane_agentic_demo.mp4" type="video/mp4">
+                    <source src="{% static 'public_pages/videos/testlane_agentic_demo.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <!-- Video Key Callouts -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+            <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
+                <div class="text-brand-400 font-mono text-xs font-semibold mb-1">STEP 01</div>
+                <h4 class="text-white font-semibold text-base mb-1">Define Target Cohort</h4>
+                <p class="text-slate-400 text-sm">Select from pre-calibrated national demographics or build hyper-targeted industry groups.</p>
+            </div>
+            <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
+                <div class="text-indigo-400 font-mono text-xs font-semibold mb-1">STEP 02</div>
+                <h4 class="text-white font-semibold text-base mb-1">Parallel Agentic Inference</h4>
+                <p class="text-slate-400 text-sm">Thousands of synthetic AI agents evaluate semantic framing and emotional resonance.</p>
+            </div>
+            <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
+                <div class="text-emerald-400 font-mono text-xs font-semibold mb-1">STEP 03</div>
+                <h4 class="text-white font-semibold text-base mb-1">Actionable Intelligence</h4>
+                <p class="text-slate-400 text-sm">Get clear statistical confidence, PR risk alerts, and concrete headline revisions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Interactive Live Demo Playground -->
+<section id="agentic-demo" class="py-24 bg-dark-950 border-b border-slate-800/80 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+            <span class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Interactive Simulation Sandbox</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Test Your Strategy Right Now</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto mt-3 text-base">
+                Experience the engine in real time. Pick a synthetic demographic cohort, enter a question, and trigger an agentic run.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <!-- Simulation Controls -->
+            <div class="lg:col-span-5 bg-slate-900/90 rounded-2xl p-6 sm:p-8 border border-slate-800 shadow-xl">
+                <h3 class="text-lg font-bold text-white mb-6 flex items-center">
+                    <svg class="w-5 h-5 text-brand-500 mr-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                    </svg>
+                    Simulation Parameters
+                </h3>
+
+                <!-- Cohort Selection -->
+                <div class="mb-5">
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Synthetic Demographic Cohort</label>
+                    <select id="simCohort" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition">
+                        <option value="b2b" data-size="2,500">UK B2B Decision Makers & Directors (N=2,500)</option>
+                        <option value="fintech" data-size="1,200">Financial Directors & CFOs (N=1,200)</option>
+                        <option value="genz" data-size="5,000">Gen-Z Early Tech Adopters (N=5,000)</option>
+                        <option value="consumers" data-size="10,000">UK National General Consumers (N=10,000)</option>
+                    </select>
+                </div>
+
+                <!-- Proposition / Question Input -->
+                <div class="mb-5">
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Hypothesis or Market Question</label>
+                    <input type="text" id="simQuestion" value="Which pricing model generates the highest adoption for our B2B AI tool?" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition">
+                </div>
+
+                <!-- Answer Options -->
+                <div class="mb-6">
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Options Being Tested</label>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center bg-slate-950 px-3 py-2 rounded-lg border border-slate-800 text-slate-300">
+                            <span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-400 font-mono text-xs flex items-center justify-center mr-2">A</span>
+                            Usage-based pricing with automated tiers
+                        </div>
+                        <div class="flex items-center bg-slate-950 px-3 py-2 rounded-lg border border-slate-800 text-slate-300">
+                            <span class="w-5 h-5 rounded-full bg-indigo-500/20 text-indigo-400 font-mono text-xs flex items-center justify-center mr-2">B</span>
+                            Annual subscription with 20% upfront discount
+                        </div>
+                        <div class="flex items-center bg-slate-950 px-3 py-2 rounded-lg border border-slate-800 text-slate-300">
+                            <span class="w-5 h-5 rounded-full bg-pink-500/20 text-pink-400 font-mono text-xs flex items-center justify-center mr-2">C</span>
+                            Flat monthly seat license
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Run Simulation Button -->
+                <button id="runSimBtn" onclick="runLiveSimulation()" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-brand-600/30 transition flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    Run Agentic Simulation
+                </button>
+            </div>
+
+            <!-- Simulation Results Output Display -->
+            <div class="lg:col-span-7 bg-slate-900/90 rounded-2xl p-6 sm:p-8 border border-slate-800 shadow-xl">
+                <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
+                    <div>
+                        <h4 class="text-base font-bold text-white">Live Execution Console</h4>
+                        <div class="text-xs text-slate-400 font-mono mt-0.5" id="simStatusMeta">Status: Ready to trigger</div>
+                    </div>
+                    <span id="simBadge" class="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-slate-800 text-slate-300 border border-slate-700">
+                        IDLE
+                    </span>
+                </div>
+
+                <!-- Live Progress Bar -->
+                <div class="mb-6">
+                    <div class="flex justify-between text-xs text-slate-400 mb-2">
+                        <span id="progressLabel">Awaiting execution...</span>
+                        <span id="progressPct" class="font-mono text-brand-400">0%</span>
+                    </div>
+                    <div class="w-full h-2.5 bg-slate-950 rounded-full overflow-hidden border border-slate-800">
+                        <div id="progressBar" class="h-full bg-gradient-to-r from-brand-500 to-indigo-500 w-0 transition-all duration-300"></div>
+                    </div>
+                </div>
+
+                <!-- Results Bars -->
+                <div id="resultsContainer" class="space-y-4 mb-8">
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold text-slate-200 mb-1.5">
+                            <span>Option A: Usage-based pricing</span>
+                            <span id="valA" class="font-mono text-brand-400">68%</span>
+                        </div>
+                        <div class="w-full h-8 bg-slate-950 rounded-lg p-1 border border-slate-800 flex items-center">
+                            <div id="barA" class="h-full bg-brand-500 rounded transition-all duration-700" style="width: 68%;"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold text-slate-200 mb-1.5">
+                            <span>Option B: Annual subscription</span>
+                            <span id="valB" class="font-mono text-indigo-400">24%</span>
+                        </div>
+                        <div class="w-full h-8 bg-slate-950 rounded-lg p-1 border border-slate-800 flex items-center">
+                            <div id="barB" class="h-full bg-indigo-500 rounded transition-all duration-700" style="width: 24%;"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold text-slate-200 mb-1.5">
+                            <span>Option C: Flat monthly seat license</span>
+                            <span id="valC" class="font-mono text-pink-400">8%</span>
+                        </div>
+                        <div class="w-full h-8 bg-slate-950 rounded-lg p-1 border border-slate-800 flex items-center">
+                            <div id="barC" class="h-full bg-pink-500 rounded transition-all duration-700" style="width: 8%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Recommendation Card -->
+                <div class="p-4 rounded-xl bg-slate-950/80 border border-brand-500/30 flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0 mt-0.5">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xs font-mono uppercase tracking-wider text-brand-400 font-semibold">Testlane Agentic Recommendation</div>
+                        <p id="recText" class="text-sm text-slate-300 mt-1 leading-relaxed">
+                            Cohort sentiment strongly favors <strong class="text-white">Option A</strong> due to zero upfront commitment. Recommend leading with usage-based pilots in all outbound press announcements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Core Platform Capabilities Section -->
+<section id="features" class="py-24 bg-dark-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="text-xs font-semibold text-brand-400 uppercase tracking-widest">End-to-End Suite</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Engineered for Strategic Communicators</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto mt-3 text-base">
+                Four specialized modules designed to de-risk high-stakes corporate messaging, PR launches, and content distribution.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Card 1 -->
+            <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 glow-card transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Synthetic Audience Q&A</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Poll thousands of AI agents configured to match specific demographic, regional, and industry profiles in under two seconds.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-mono text-brand-400 flex items-center">
+                    Semilattice SDK Powered &rarr;
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 glow-card transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Press Release Scorer</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Evaluates draft releases for news value, executive tone, clarity, and potential PR backlash before sending to distribution lists.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-mono text-emerald-400 flex items-center">
+                    Automated Risk Analysis &rarr;
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 glow-card transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Headline Engagement Tester</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Test headline variants in parallel. Understand click inclination and cognitive friction across target demographics.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-mono text-indigo-400 flex items-center">
+                    A/B Click Prediction &rarr;
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 glow-card transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Brand Resonance Tracking</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Continuously monitor sentiment drift across cohorts. Catch brand misalignment weeks before conventional polls detect it.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-mono text-pink-400 flex items-center">
+                    Cohort Drift Detection &rarr;
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final Call to Action -->
+<section class="py-24 bg-gradient-to-t from-dark-950 to-dark-900 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
+            Stop Guessing. <br>Start Simulating with Testlane AI.
+        </h2>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Gain immediate strategic certainty. Connect your messaging to synthetic populations and make data-backed communications your unfair advantage.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             {% if user.is_authenticated %}
-                <a href="{% url 'home' %}" class="bg-secondary text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-blue-700 transition">
-                    Go to Dashboard
+                <a href="{% url 'home' %}" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-white bg-brand-600 hover:bg-brand-500 shadow-xl shadow-brand-600/30 transition">
+                    Open Your Dashboard
                 </a>
             {% else %}
-                <a href="{% url 'signup' %}" class="bg-secondary text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-blue-700 transition">
-                    Get Started Free
+                <a href="{% url 'signup' %}" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-white bg-brand-600 hover:bg-brand-500 shadow-xl shadow-brand-600/30 transition">
+                    Get Started Free Today
                 </a>
-                <a href="{% url 'login' %}" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-white hover:text-primary transition">
-                    Login
+                <a href="mailto:stuart@testlane.ai" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition">
+                    Book an Enterprise Briefing
                 </a>
             {% endif %}
         </div>
     </div>
 </section>
+{% endblock %}
 
-<!-- Features Section -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-primary mb-4">Powerful Tools at Your Fingertips</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-                Our suite of AI-powered tools helps you understand how your content will resonate
-                with different audiences before you publish.
-            </p>
-        </div>
+{% block scripts %}
+<script>
+// Interactive Simulation Logic
+let isRunning = false;
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Feature 1: Ask Questions -->
-            <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition">
-                <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-lg font-semibold text-primary mb-2">Ask Questions</h3>
-                <p class="text-gray-600 text-sm">
-                    Simulate survey responses from different population segments using AI to predict how audiences will respond.
-                </p>
-            </div>
+function runLiveSimulation() {
+    if (isRunning) return;
+    isRunning = true;
 
-            <!-- Feature 2: Press Release Scorer -->
-            <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition">
-                <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-lg font-semibold text-primary mb-2">Press Release Scorer</h3>
-                <p class="text-gray-600 text-sm">
-                    Get AI-powered feedback on your press releases with detailed scoring and suggestions for improvement.
-                </p>
-            </div>
+    const btn = document.getElementById('runSimBtn');
+    const badge = document.getElementById('simBadge');
+    const statusMeta = document.getElementById('simStatusMeta');
+    const progressLabel = document.getElementById('progressLabel');
+    const progressPct = document.getElementById('progressPct');
+    const progressBar = document.getElementById('progressBar');
+    
+    const barA = document.getElementById('barA');
+    const barB = document.getElementById('barB');
+    const barC = document.getElementById('barC');
+    const valA = document.getElementById('valA');
+    const valB = document.getElementById('valB');
+    const valC = document.getElementById('valC');
+    const recText = document.getElementById('recText');
 
-            <!-- Feature 3: Headline Tester -->
-            <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition">
-                <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-lg font-semibold text-primary mb-2">Headline Tester</h3>
-                <p class="text-gray-600 text-sm">
-                    Test multiple headline variations to find the most compelling option for your target audience.
-                </p>
-            </div>
+    const cohort = document.getElementById('simCohort').value;
 
-            <!-- Feature 4: Brand Tracking -->
-            <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition">
-                <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-lg font-semibold text-primary mb-2">Brand Tracking</h3>
-                <p class="text-gray-600 text-sm">
-                    Monitor and analyze brand perception across different demographics and market segments.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+    btn.disabled = true;
+    btn.classList.add('opacity-50', 'cursor-not-allowed');
 
-<!-- CTA Section -->
-<section class="py-16 bg-secondary">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
-        <p class="text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join Testlane today and start leveraging AI to improve your PR and marketing outcomes.
-        </p>
-        {% if user.is_authenticated %}
-            <a href="{% url 'home' %}" class="bg-white text-secondary px-8 py-3 rounded-lg text-lg font-medium hover:bg-gray-100 transition">
-                Go to Dashboard
-            </a>
-        {% else %}
-            <a href="{% url 'signup' %}" class="bg-white text-secondary px-8 py-3 rounded-lg text-lg font-medium hover:bg-gray-100 transition">
-                Create Your Free Account
-            </a>
-        {% endif %}
-    </div>
-</section>
+    // Reset UI
+    progressBar.style.width = '0%';
+    progressPct.innerText = '0%';
+    barA.style.width = '0%';
+    barB.style.width = '0%';
+    barC.style.width = '0%';
+    valA.innerText = '0%';
+    valB.innerText = '0%';
+    valC.innerText = '0%';
+
+    // Step 1: Queued
+    badge.innerText = 'QUEUED';
+    badge.className = 'px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-amber-500/20 text-amber-400 border border-amber-500/30';
+    statusMeta.innerText = 'Allocating synthetic agent partitions...';
+    progressLabel.innerText = 'Initializing population parameters...';
+    progressBar.style.width = '20%';
+    progressPct.innerText = '20%';
+
+    setTimeout(() => {
+        // Step 2: Running
+        badge.innerText = 'RUNNING';
+        badge.className = 'px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-brand-500/20 text-brand-400 border border-brand-500/30 animate-pulse';
+        statusMeta.innerText = 'Executing cognitive inference across demographic nodes...';
+        progressLabel.innerText = 'Polling agents for perceptual resonance...';
+        progressBar.style.width = '65%';
+        progressPct.innerText = '65%';
+
+        setTimeout(() => {
+            // Step 3: Predicted
+            badge.innerText = 'PREDICTED';
+            badge.className = 'px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
+            statusMeta.innerText = 'Statistical convergence reached (Confidence: 98.2%)';
+            progressLabel.innerText = 'Simulation finalized in 142ms.';
+            progressBar.style.width = '100%';
+            progressPct.innerText = '100%';
+
+            // Dynamic results based on cohort
+            if (cohort === 'fintech') {
+                barA.style.width = '52%';
+                barB.style.width = '41%';
+                barC.style.width = '7%';
+                valA.innerText = '52%';
+                valB.innerText = '41%';
+                valC.innerText = '7%';
+                recText.innerHTML = 'Financial Officers prioritize <strong class="text-white">Option B (Annual Discount)</strong> significantly more than tech founders. Emphasize predictability and balance sheet amortization.';
+            } else if (cohort === 'genz') {
+                barA.style.width = '84%';
+                barB.style.width = '11%';
+                barC.style.width = '5%';
+                valA.innerText = '84%';
+                valB.innerText = '11%';
+                valC.innerText = '5%';
+                recText.innerHTML = 'Extreme preference for <strong class="text-white">Option A (Zero-commitment Usage)</strong>. Any upfront barrier creates over 70% immediate drop-off.';
+            } else {
+                barA.style.width = '68%';
+                barB.style.width = '24%';
+                barC.style.width = '8%';
+                valA.innerText = '68%';
+                valB.innerText = '24%';
+                valC.innerText = '8%';
+                recText.innerHTML = 'Cohort sentiment strongly favors <strong class="text-white">Option A</strong> due to zero upfront commitment. Recommend leading with usage-based pilots in all outbound announcements.';
+            }
+
+            btn.disabled = false;
+            btn.classList.remove('opacity-50', 'cursor-not-allowed');
+            isRunning = false;
+        }, 900);
+    }, 700);
+}
+</script>
 {% endblock %}

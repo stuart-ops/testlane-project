@@ -1,0 +1,79 @@
+{% extends 'public_pages/base_public.html' %}
+{% load static %}
+
+{% block title %}Interactive Product Demo - Testlane AI{% endblock %}
+
+{% block content %}
+<section class="py-16 bg-dark-900 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="text-xs font-mono font-semibold text-brand-400 uppercase tracking-widest">Self-Guided Product Tour</span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">Testlane AI Product Demo</h1>
+        <p class="text-slate-400 max-w-2xl mx-auto mt-4 text-base">
+            Explore how Testlane leverages Semilattice AI to simulate audience reactions, optimize headlines, and score press releases before you publish.
+        </p>
+    </div>
+</section>
+
+<!-- Demo Video & Interactive Section -->
+<section class="py-16 bg-dark-950">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Video Card -->
+        <div class="rounded-2xl overflow-hidden border border-slate-800 shadow-2xl bg-black mb-16 glow-blue">
+            <div class="px-4 py-3 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+                <span class="text-xs font-mono text-slate-300">Live Agentic Simulation Video Demo (1080p)</span>
+                <span class="text-xs font-mono text-brand-400">Autoplay • Loop</span>
+            </div>
+            <video class="w-full aspect-video object-cover" autoplay loop muted playsinline controls>
+                <source src="/media/testlane_agentic_demo.mp4" type="video/mp4">
+                <source src="{% static 'public_pages/videos/testlane_agentic_demo.mp4' %}" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+
+        <!-- 3 Interactive Modes -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-6 rounded-xl bg-slate-900/80 border border-slate-800">
+                <h3 class="text-lg font-bold text-white mb-2">1. Ask Questions</h3>
+                <p class="text-sm text-slate-400 mb-4">
+                    Send survey questions to synthetic population segments to see predicted vote distributions.
+                </p>
+                <a href="{% url 'landing' %}#agentic-demo" class="text-brand-400 text-sm font-semibold hover:text-brand-300">
+                    Try Simulation Playground &rarr;
+                </a>
+            </div>
+
+            <div class="p-6 rounded-xl bg-slate-900/80 border border-slate-800">
+                <h3 class="text-lg font-bold text-white mb-2">2. Headline Tester</h3>
+                <p class="text-sm text-slate-400 mb-4">
+                    Score headline variants across cognitive engagement, interest level, and click potential.
+                </p>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'headline_tester:list' %}" class="text-brand-400 text-sm font-semibold hover:text-brand-300">
+                        Open Headline Tester &rarr;
+                    </a>
+                {% else %}
+                    <a href="{% url 'signup' %}" class="text-brand-400 text-sm font-semibold hover:text-brand-300">
+                        Sign up to test headlines &rarr;
+                    </a>
+                {% endif %}
+            </div>
+
+            <div class="p-6 rounded-xl bg-slate-900/80 border border-slate-800">
+                <h3 class="text-lg font-bold text-white mb-2">3. Press Release Scorer</h3>
+                <p class="text-sm text-slate-400 mb-4">
+                    Comprehensive multi-factor analysis: journalistic appeal, tone, clarity, and PR risk radar.
+                </p>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'press_release_scorer:submit' %}" class="text-brand-400 text-sm font-semibold hover:text-brand-300">
+                        Score a Press Release &rarr;
+                    </a>
+                {% else %}
+                    <a href="{% url 'signup' %}" class="text-brand-400 text-sm font-semibold hover:text-brand-300">
+                        Sign up to score releases &rarr;
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

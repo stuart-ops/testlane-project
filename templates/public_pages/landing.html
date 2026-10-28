@@ -1,71 +1,69 @@
 {% extends 'public_pages/base_public.html' %}
 {% load static %}
 
-{% block title %}Testlane AI - Autonomous Audience & PR Intelligence{% endblock %}
+{% block title %}Testlane - Sovereign AI for Home & Business Operations{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
-<section class="relative overflow-hidden pt-20 pb-28 md:pt-28 md:pb-36 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900 border-b border-slate-800/80">
+<section class="relative overflow-hidden pt-20 pb-28 md:pt-32 md:pb-36 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900 border-b border-slate-800/80">
     <!-- Ambient Glow Background -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-brand-600/20 rounded-full blur-[140px] pointer-events-none"></div>
-    <div class="absolute top-1/3 left-1/4 w-[400px] h-[300px] bg-indigo-500/15 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[380px] bg-brand-600/20 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute top-1/3 left-1/4 w-[450px] h-[320px] bg-indigo-500/15 rounded-full blur-[120px] pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <!-- Status Pill -->
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-8">
-            <span class="flex h-2 w-2 rounded-full bg-brand-400 animate-pulse"></span>
-            Testlane 2.0 • Autonomous Synthetic Cohorts
+            <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Sovereign Architecture • Zero Cloud Data Leaks
         </div>
 
         <!-- Main Headline -->
         <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.1] mb-8">
-            Predict How The World Responds <br class="hidden sm:block">
+            Sovereign AI Agents for <br class="hidden sm:block">
             <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-400 via-indigo-300 to-white">
-                Before You Publish.
+                Home & Business Operations.
             </span>
         </h1>
 
         <!-- Subheadline -->
         <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10 font-normal">
-            Testlane AI deploys agentic synthetic populations to simulate real-world audience reactions, score press releases, and optimize headlines in seconds — with empirical precision.
+            An unflappable, autonomous personal assistant and fractional FD running on dedicated local hardware. Deployed to clear household clutter, protect family time, and execute high-stakes corporate finance.
         </p>
 
         <!-- Call to Actions -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <a href="#agentic-demo" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-brand-600 hover:bg-brand-500 shadow-lg shadow-brand-600/30 hover:shadow-brand-500/50 transition-all duration-200">
+            <a href="#interactive-sandbox" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-brand-600 hover:bg-brand-500 shadow-lg shadow-brand-600/30 hover:shadow-brand-500/50 transition-all duration-200">
                 <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                Try Interactive Simulation
+                Explore Live Use Cases
             </a>
             <a href="#video-tour" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-slate-600 transition-all duration-200">
-                Watch Product Video
+                Watch System Video
             </a>
-            {% if not user.is_authenticated %}
-                <a href="{% url 'signup' %}" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-brand-400 hover:text-white transition">
-                    Create Account &rarr;
-                </a>
-            {% endif %}
+            <a href="#sovereign-stack" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-brand-400 hover:text-white transition">
+                Architecture Blueprint &rarr;
+            </a>
         </div>
 
         <!-- Social Proof Stats -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto pt-8 border-t border-slate-800/60">
             <div>
-                <div class="text-3xl font-bold text-white font-mono">98.4%</div>
-                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Cohort Accuracy</div>
+                <div class="text-3xl font-bold text-white font-mono">100%</div>
+                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Data Sovereignty (NAS)</div>
             </div>
             <div>
-                <div class="text-3xl font-bold text-brand-400 font-mono">140ms</div>
-                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Inference Speed</div>
+                <div class="text-3xl font-bold text-brand-400 font-mono">£100/hr</div>
+                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Automated Billing Capture</div>
             </div>
             <div>
-                <div class="text-3xl font-bold text-white font-mono">10,000+</div>
-                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Simulated Agents</div>
+                <div class="text-3xl font-bold text-emerald-400 font-mono">Hands-Free</div>
+                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Commute Voice Operations</div>
             </div>
             <div>
-                <div class="text-3xl font-bold text-emerald-400 font-mono">10x</div>
-                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Cost Reduction</div>
+                <div class="text-3xl font-bold text-indigo-400 font-mono">Zero Cloud</div>
+                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Privacy-Preserving Vault</div>
             </div>
         </div>
     </div>
@@ -75,10 +73,10 @@
 <section id="video-tour" class="py-24 bg-dark-900 border-b border-slate-800/80">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-            <span class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Platform Walkthrough</span>
-            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">See Agentic Intelligence in Action</h2>
+            <span class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Sovereign Deployment Tour</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">See Autonomous Agents in Production</h2>
             <p class="text-slate-400 max-w-2xl mx-auto mt-3 text-base">
-                Watch Testlane AI synthesize 2,500 enterprise buyer perspectives, score resonance, and deliver strategic guidance.
+                Real-world execution: from hands-free morning commute briefs and property contractor negotiations to QuickBooks daily bank reconciliation and timesheet accrual.
             </p>
         </div>
 
@@ -95,9 +93,9 @@
                     <svg class="w-3.5 h-3.5 text-brand-400" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                     </svg>
-                    testlane.ai / agentic_session_uk_b2b.mp4
+                    gem@home-server:~/workspace/demo_home_and_business.mp4
                 </div>
-                <div class="text-xs text-slate-500 font-mono">1080p 60fps</div>
+                <div class="text-xs text-slate-500 font-mono">1080p • NAS Docker Native</div>
             </div>
 
             <!-- Video Player -->
@@ -110,249 +108,260 @@
             </div>
         </div>
 
-        <!-- Video Key Callouts -->
+        <!-- 3 Pillars Breakdown -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-            <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div class="text-brand-400 font-mono text-xs font-semibold mb-1">STEP 01</div>
-                <h4 class="text-white font-semibold text-base mb-1">Define Target Cohort</h4>
-                <p class="text-slate-400 text-sm">Select from pre-calibrated national demographics or build hyper-targeted industry groups.</p>
+            <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+                <div class="text-brand-400 font-mono text-xs font-semibold mb-1">PILLAR 01</div>
+                <h4 class="text-white font-semibold text-base mb-1">Home & Family Ops</h4>
+                <p class="text-slate-400 text-sm">Automated contractor quotes, tenancies (Nithdale Rd), school runs, and commute audio briefings.</p>
             </div>
-            <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div class="text-indigo-400 font-mono text-xs font-semibold mb-1">STEP 02</div>
-                <h4 class="text-white font-semibold text-base mb-1">Parallel Agentic Inference</h4>
-                <p class="text-slate-400 text-sm">Thousands of synthetic AI agents evaluate semantic framing and emotional resonance.</p>
+            <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+                <div class="text-emerald-400 font-mono text-xs font-semibold mb-1">PILLAR 02</div>
+                <h4 class="text-white font-semibold text-base mb-1">Fractional FD & Finance</h4>
+                <p class="text-slate-400 text-sm">QuickBooks multi-entity sync, daily cash dashboards, £100/hr billing accruals, and month-end invoicing.</p>
             </div>
-            <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div class="text-emerald-400 font-mono text-xs font-semibold mb-1">STEP 03</div>
-                <h4 class="text-white font-semibold text-base mb-1">Actionable Intelligence</h4>
-                <p class="text-slate-400 text-sm">Get clear statistical confidence, PR risk alerts, and concrete headline revisions.</p>
+            <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+                <div class="text-indigo-400 font-mono text-xs font-semibold mb-1">PILLAR 03</div>
+                <h4 class="text-white font-semibold text-base mb-1">Sovereign-First Stack</h4>
+                <p class="text-slate-400 text-sm">Runs on your NAS. Your photos, bank feeds, contracts, and chat logs stay entirely in your own hands.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Interactive Live Demo Playground -->
-<section id="agentic-demo" class="py-24 bg-dark-950 border-b border-slate-800/80 relative">
+<!-- Interactive Live Use-Case Sandbox -->
+<section id="interactive-sandbox" class="py-24 bg-dark-950 border-b border-slate-800/80 relative">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-14">
-            <span class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Interactive Simulation Sandbox</span>
-            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Test Your Strategy Right Now</h2>
+            <span class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Interactive Use-Case Explorer</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Test Live Workflows in Real Time</h2>
             <p class="text-slate-400 max-w-2xl mx-auto mt-3 text-base">
-                Experience the engine in real time. Pick a synthetic demographic cohort, enter a question, and trigger an agentic run.
+                Switch between Home Operations and Business Finance to see how the agent reasons, executes, and verifies tasks.
             </p>
+        </div>
+
+        <!-- Mode Toggle Tabs -->
+        <div class="flex justify-center mb-10">
+            <div class="bg-slate-900 p-1.5 rounded-2xl border border-slate-800 flex space-x-2">
+                <button id="tabHome" onclick="switchDomain('home')" class="px-6 py-2.5 rounded-xl text-sm font-bold bg-brand-600 text-white transition-all shadow-md">
+                    🏡 Home & Family Operations
+                </button>
+                <button id="tabBiz" onclick="switchDomain('business')" class="px-6 py-2.5 rounded-xl text-sm font-bold text-slate-400 hover:text-white transition-all">
+                    💼 Business & Fractional FD
+                </button>
+            </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <!-- Simulation Controls -->
+            <!-- Left: Scenario Selector -->
             <div class="lg:col-span-5 bg-slate-900/90 rounded-2xl p-6 sm:p-8 border border-slate-800 shadow-xl">
-                <h3 class="text-lg font-bold text-white mb-6 flex items-center">
-                    <svg class="w-5 h-5 text-brand-500 mr-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
-                    </svg>
-                    Simulation Parameters
+                <h3 class="text-lg font-bold text-white mb-5 flex items-center">
+                    <span id="scenarioIcon" class="mr-2.5 text-brand-400">🏡</span>
+                    <span id="scenarioHeading">Select a Household Scenario</span>
                 </h3>
 
-                <!-- Cohort Selection -->
-                <div class="mb-5">
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Synthetic Demographic Cohort</label>
-                    <select id="simCohort" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition">
-                        <option value="b2b" data-size="2,500">UK B2B Decision Makers & Directors (N=2,500)</option>
-                        <option value="fintech" data-size="1,200">Financial Directors & CFOs (N=1,200)</option>
-                        <option value="genz" data-size="5,000">Gen-Z Early Tech Adopters (N=5,000)</option>
-                        <option value="consumers" data-size="10,000">UK National General Consumers (N=10,000)</option>
-                    </select>
+                <div id="scenarioList" class="space-y-3 mb-6">
+                    <!-- Injected via JavaScript -->
                 </div>
 
-                <!-- Proposition / Question Input -->
-                <div class="mb-5">
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Hypothesis or Market Question</label>
-                    <input type="text" id="simQuestion" value="Which pricing model generates the highest adoption for our B2B AI tool?" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition">
-                </div>
-
-                <!-- Answer Options -->
-                <div class="mb-6">
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Options Being Tested</label>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex items-center bg-slate-950 px-3 py-2 rounded-lg border border-slate-800 text-slate-300">
-                            <span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-400 font-mono text-xs flex items-center justify-center mr-2">A</span>
-                            Usage-based pricing with automated tiers
-                        </div>
-                        <div class="flex items-center bg-slate-950 px-3 py-2 rounded-lg border border-slate-800 text-slate-300">
-                            <span class="w-5 h-5 rounded-full bg-indigo-500/20 text-indigo-400 font-mono text-xs flex items-center justify-center mr-2">B</span>
-                            Annual subscription with 20% upfront discount
-                        </div>
-                        <div class="flex items-center bg-slate-950 px-3 py-2 rounded-lg border border-slate-800 text-slate-300">
-                            <span class="w-5 h-5 rounded-full bg-pink-500/20 text-pink-400 font-mono text-xs flex items-center justify-center mr-2">C</span>
-                            Flat monthly seat license
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Run Simulation Button -->
-                <button id="runSimBtn" onclick="runLiveSimulation()" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-brand-600/30 transition flex items-center justify-center gap-2">
+                <button id="runActionBtn" onclick="executeScenario()" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-brand-600/30 transition flex items-center justify-center gap-2">
                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
-                    Run Agentic Simulation
+                    Dispatch Autonomous Agent
                 </button>
             </div>
 
-            <!-- Simulation Results Output Display -->
+            <!-- Right: Execution Transcript & Verifiable Outcome -->
             <div class="lg:col-span-7 bg-slate-900/90 rounded-2xl p-6 sm:p-8 border border-slate-800 shadow-xl">
                 <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
                     <div>
-                        <h4 class="text-base font-bold text-white">Live Execution Console</h4>
-                        <div class="text-xs text-slate-400 font-mono mt-0.5" id="simStatusMeta">Status: Ready to trigger</div>
+                        <h4 class="text-base font-bold text-white">Agent Execution Log</h4>
+                        <div class="text-xs text-slate-400 font-mono mt-0.5" id="agentStatusMeta">Status: Idle & listening</div>
                     </div>
-                    <span id="simBadge" class="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-slate-800 text-slate-300 border border-slate-700">
-                        IDLE
+                    <span id="agentBadge" class="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-slate-800 text-slate-300 border border-slate-700">
+                        READY
                     </span>
                 </div>
 
-                <!-- Live Progress Bar -->
-                <div class="mb-6">
-                    <div class="flex justify-between text-xs text-slate-400 mb-2">
-                        <span id="progressLabel">Awaiting execution...</span>
-                        <span id="progressPct" class="font-mono text-brand-400">0%</span>
-                    </div>
-                    <div class="w-full h-2.5 bg-slate-950 rounded-full overflow-hidden border border-slate-800">
-                        <div id="progressBar" class="h-full bg-gradient-to-r from-brand-500 to-indigo-500 w-0 transition-all duration-300"></div>
-                    </div>
+                <!-- Terminal Step Output -->
+                <div id="terminalSteps" class="font-mono text-xs space-y-2.5 bg-dark-950 p-5 rounded-xl border border-slate-800 mb-6 min-h-[180px] overflow-y-auto">
+                    <div class="text-slate-500">> Select a scenario on the left and click 'Dispatch Autonomous Agent'...</div>
                 </div>
 
-                <!-- Results Bars -->
-                <div id="resultsContainer" class="space-y-4 mb-8">
-                    <div>
-                        <div class="flex justify-between text-xs font-semibold text-slate-200 mb-1.5">
-                            <span>Option A: Usage-based pricing</span>
-                            <span id="valA" class="font-mono text-brand-400">68%</span>
-                        </div>
-                        <div class="w-full h-8 bg-slate-950 rounded-lg p-1 border border-slate-800 flex items-center">
-                            <div id="barA" class="h-full bg-brand-500 rounded transition-all duration-700" style="width: 68%;"></div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="flex justify-between text-xs font-semibold text-slate-200 mb-1.5">
-                            <span>Option B: Annual subscription</span>
-                            <span id="valB" class="font-mono text-indigo-400">24%</span>
-                        </div>
-                        <div class="w-full h-8 bg-slate-950 rounded-lg p-1 border border-slate-800 flex items-center">
-                            <div id="barB" class="h-full bg-indigo-500 rounded transition-all duration-700" style="width: 24%;"></div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="flex justify-between text-xs font-semibold text-slate-200 mb-1.5">
-                            <span>Option C: Flat monthly seat license</span>
-                            <span id="valC" class="font-mono text-pink-400">8%</span>
-                        </div>
-                        <div class="w-full h-8 bg-slate-950 rounded-lg p-1 border border-slate-800 flex items-center">
-                            <div id="barC" class="h-full bg-pink-500 rounded transition-all duration-700" style="width: 8%;"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Strategic Recommendation Card -->
-                <div class="p-4 rounded-xl bg-slate-950/80 border border-brand-500/30 flex items-start gap-3">
-                    <div class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0 mt-0.5">
-                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="text-xs font-mono uppercase tracking-wider text-brand-400 font-semibold">Testlane Agentic Recommendation</div>
-                        <p id="recText" class="text-sm text-slate-300 mt-1 leading-relaxed">
-                            Cohort sentiment strongly favors <strong class="text-white">Option A</strong> due to zero upfront commitment. Recommend leading with usage-based pilots in all outbound press announcements.
-                        </p>
-                    </div>
+                <!-- Verified Artifact Result Box -->
+                <div id="artifactBox" class="p-5 rounded-xl bg-slate-950/90 border border-slate-800 transition-all">
+                    <div class="text-xs font-mono uppercase tracking-wider text-slate-500 font-semibold mb-1" id="artifactHeader">Deliverable Status</div>
+                    <p id="artifactContent" class="text-sm text-slate-400 leading-relaxed">
+                        Awaiting execution. All agentic actions are backed by verified file artifacts and real tool outputs.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Core Platform Capabilities Section -->
+<!-- Deep Dive: Use Cases Grid -->
 <section id="features" class="py-24 bg-dark-900 border-b border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <span class="text-xs font-semibold text-brand-400 uppercase tracking-widest">End-to-End Suite</span>
-            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Engineered for Strategic Communicators</h2>
+            <span class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Complete Coverage</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Engineered for Real-World Demands</h2>
             <p class="text-slate-400 max-w-2xl mx-auto mt-3 text-base">
-                Four specialized modules designed to de-risk high-stakes corporate messaging, PR launches, and content distribution.
+                Bridging executive business finance with private family life management.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Card 1 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1: Property Maintenance -->
             <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 glow-card transition-all duration-300 flex flex-col justify-between">
                 <div>
                     <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-6">
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Synthetic Audience Q&A</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Poll thousands of AI agents configured to match specific demographic, regional, and industry profiles in under two seconds.
+                    <h3 class="text-xl font-bold text-white mb-3">Sovereign Property Ops</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                        Autonomous trade quote procurement, tenant communication, contractor oversight, and maintenance tracking across rental properties (Nithdale Rd, Carpenters Arms, Lion Lodge).
                     </p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-mono text-brand-400 flex items-center">
-                    Semilattice SDK Powered &rarr;
+                <div class="pt-4 border-t border-slate-800/80 text-xs font-mono text-brand-400">
+                    Use Case: Family Time Protection
                 </div>
             </div>
 
-            <!-- Card 2 -->
+            <!-- Card 2: Voice Commute Briefing -->
             <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 glow-card transition-all duration-300 flex flex-col justify-between">
                 <div>
                     <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-6">
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"/>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Press Release Scorer</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Evaluates draft releases for news value, executive tone, clarity, and potential PR backlash before sending to distribution lists.
+                    <h3 class="text-xl font-bold text-white mb-3">Hands-Free Commute Voice</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                        Turn-by-turn voice briefings tuned for hands-free driving in the Peugeot (6:10–7:00 AM commute). School run logistics, daily weather, appointment reminders, and zero faffing.
                     </p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-mono text-emerald-400 flex items-center">
-                    Automated Risk Analysis &rarr;
+                <div class="pt-4 border-t border-slate-800/80 text-xs font-mono text-emerald-400">
+                    Use Case: Driver Safety & Clarity
                 </div>
             </div>
 
-            <!-- Card 3 -->
+            <!-- Card 3: Photo Vault -->
+            <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 glow-card transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Self-Hosted Photo Vault</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                        Automatic ingestion of phone camera rolls directly to 3.7TB on-premise NAS storage (Immich pipeline), paired with cold GCS offsite backup to cancel recurring cloud subscription fees.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-slate-800/80 text-xs font-mono text-purple-400">
+                    Use Case: Total Digital Sovereignty
+                </div>
+            </div>
+
+            <!-- Card 4: Fractional FD Controller -->
             <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 glow-card transition-all duration-300 flex flex-col justify-between">
                 <div>
                     <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-6">
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Headline Engagement Tester</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Test headline variants in parallel. Understand click inclination and cognitive friction across target demographics.
-                    </p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-mono text-indigo-400 flex items-center">
-                    A/B Click Prediction &rarr;
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 glow-card transition-all duration-300 flex flex-col justify-between">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Brand Resonance Tracking</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Continuously monitor sentiment drift across cohorts. Catch brand misalignment weeks before conventional polls detect it.
+                    <h3 class="text-xl font-bold text-white mb-3">Autonomous FD Controller</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                        Nightly QuickBooks ledger ingestion across 4 entities (US LLC, West, Middle East, Europe). Balance sheet normalisation, intercompany eliminations, and Daily Cash dashboard sync.
                     </p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-mono text-pink-400 flex items-center">
-                    Cohort Drift Detection &rarr;
+                <div class="pt-4 border-t border-slate-800/80 text-xs font-mono text-indigo-400">
+                    Use Case: Executive Financial Control
+                </div>
+            </div>
+
+            <!-- Card 5: Timesheet & Invoicing -->
+            <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 glow-card transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Automated Billing & Invoices</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                        Continuous timesheet capture (£100/hr), auditing communications against completed deliverables, and month-end invoice PDF generation dispatched straight to client accounts payable.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-slate-800/80 text-xs font-mono text-amber-400">
+                    Use Case: Zero-Admin Remittance
+                </div>
+            </div>
+
+            <!-- Card 6: Life Ops Compliance -->
+            <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 glow-card transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Domestic Compliance Radar</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                        Direct DVLA vehicle API lookups (MOT & Tax countdowns for WN21 HLO), insurance policy renewals, So Energy direct debit scrutinisation, and Council bin schedule dispatch.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-slate-800/80 text-xs font-mono text-rose-400">
+                    Use Case: Household Peace of Mind
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Architecture Blueprint Section -->
+<section id="sovereign-stack" class="py-24 bg-dark-950 border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Hardware & Network Topology</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">The Sovereign Infrastructure</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto mt-3 text-base">
+                How we run autonomous AI agents in your own home with zero exposure to public internet attacks.
+            </p>
+        </div>
+
+        <div class="p-8 sm:p-12 rounded-3xl bg-slate-900/80 border border-slate-800 shadow-2xl relative overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Node 1 -->
+                <div class="border-l-2 border-brand-500 pl-6">
+                    <div class="text-brand-400 font-mono text-xs uppercase mb-1">01 • CORE HARDWARE</div>
+                    <h4 class="text-lg font-bold text-white mb-2">UGREEN NASync N100</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Intel N100, 8GB DDR5, 3.7TB Btrfs storage. Runs the Hermes Docker gateway daemon on local host IP `192.168.1.24`.
+                    </p>
+                </div>
+
+                <!-- Node 2 -->
+                <div class="border-l-2 border-indigo-500 pl-6">
+                    <div class="text-indigo-400 font-mono text-xs uppercase mb-1">02 • ZERO-TRUST NETWORK</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Tailscale Mesh Topology</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        End-to-end WireGuard tunnel. No open inbound ports or router port forwards. Authenticates Stuart's phone, laptop, and NAS.
+                    </p>
+                </div>
+
+                <!-- Node 3 -->
+                <div class="border-l-2 border-emerald-500 pl-6">
+                    <div class="text-emerald-400 font-mono text-xs uppercase mb-1">03 • LOCAL STATE & SYNC</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Obsidian + Syncthing Vault</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Task state, Kanban boards, and financial logs synchronise directly between phone and NAS with zero cloud intermediary.
+                    </p>
                 </div>
             </div>
         </div>
@@ -363,23 +372,23 @@
 <section class="py-24 bg-gradient-to-t from-dark-950 to-dark-900 relative">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
-            Stop Guessing. <br>Start Simulating with Testlane AI.
+            Autonomous Execution. <br>Total Privacy. Zero Faffing.
         </h2>
         <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Gain immediate strategic certainty. Connect your messaging to synthetic populations and make data-backed communications your unfair advantage.
+            The family-first, sovereign AI operating system that protects your peace of mind and keeps corporate finances impeccably reconciled.
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             {% if user.is_authenticated %}
                 <a href="{% url 'home' %}" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-white bg-brand-600 hover:bg-brand-500 shadow-xl shadow-brand-600/30 transition">
-                    Open Your Dashboard
+                    Access Dashboard
                 </a>
             {% else %}
                 <a href="{% url 'signup' %}" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-white bg-brand-600 hover:bg-brand-500 shadow-xl shadow-brand-600/30 transition">
-                    Get Started Free Today
+                    Get Started Free
                 </a>
                 <a href="mailto:stuart@testlane.ai" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition">
-                    Book an Enterprise Briefing
+                    Contact Stuart Lyons
                 </a>
             {% endif %}
         </div>
@@ -389,101 +398,231 @@
 
 {% block scripts %}
 <script>
-// Interactive Simulation Logic
-let isRunning = false;
+// Scenarios Data
+const scenarios = {
+    home: [
+        {
+            id: 'pest',
+            title: 'Pest Control Tender Review',
+            desc: 'BPCA competitive tender for 67 Ospringe Street: GEM (£225, 6 visits) vs Imperium (£300, 3 visits).',
+            steps: [
+                'Checking BPCA tender submissions in local NAS inbox...',
+                'Vendor A: Imperium Pest Control - £300 inc. VAT (3 visits, Earliest: 2 Nov)',
+                'Vendor B: GEM Services (Nate Green) - £225 total, no VAT (Up to 6 visits, Earliest: This week)',
+                'Applying Family First rule: Scrutinise overpriced quotes, protect buffers.',
+                'Recommendation: GEM Services saves £75, provides double the visits, and arrives sooner.'
+            ],
+            badge: 'TENDER WON',
+            badgeClass: 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30',
+            header: 'Verified Sovereign Decision',
+            content: 'GEM Services confirmed for £225 (no VAT). Family savings: £75.00. Booking confirmation dispatched.'
+        },
+        {
+            id: 'gutter',
+            title: '16 Nithdale Rd Gutter Tender',
+            desc: 'Instruction to Wesley Tom for pre-winter debris inspection & clearance.',
+            steps: [
+                'Reading tenancy file for 16 Nithdale Road, SE18 3PA...',
+                'Composing formal instruction to Wesley Tom (wesley@clht.org)...',
+                'CC added: Angelina Lyons (angelina.s.lyons@gmail.com)...',
+                'Sending instruction email via Google Workspace API...',
+                'Updating Kanban board in local Obsidian vault via Syncthing...'
+            ],
+            badge: 'DISPATCHED',
+            badgeClass: 'bg-brand-500/20 text-brand-400 border border-brand-500/30',
+            header: 'Email & Board Verification',
+            content: 'Email sent successfully (Message ID: 1a18134b4bb5b300). Gutter clearance moved to Done on Kanban.'
+        },
+        {
+            id: 'commute',
+            title: 'Peugeot Commute Voice Brief',
+            desc: '6:10 AM hands-free driving synthesis: school schedules, appointments, weather.',
+            steps: [
+                'Checking family calendar & half-term schedules...',
+                'Elijah: 10:30 AM Dentist -> 11:30 AM One-on-one with Jenin.',
+                'Olympia: MSDA Holiday Club attendance confirmed.',
+                'Weather: 6°C Faversham -> 15°C Northfleet (Low rain risk 20%).',
+                'Synthesizing concise audio speech via Edge TTS (1.18x speed)...'
+            ],
+            badge: 'VOICE SENT',
+            badgeClass: 'bg-indigo-500/20 text-indigo-400 border border-indigo-500/30',
+            header: 'Driver Safety Delivery',
+            content: '2-sentence crisp audio note delivered to Telegram for hands-free Bluetooth car playback.'
+        }
+    ],
+    business: [
+        {
+            id: 'bankrec',
+            title: 'Daily Bank & Feed Reconciliation',
+            desc: 'Multi-entity reconciliation on BofA West 7563 against daily cash reports.',
+            steps: [
+                'Accessing Google Sheet (ID: 1Gh9uXFO38AnJmu_vo7NsjeV-vsNEVPHlgbg2lAx4flw)...',
+                'Auditing West 7563 balance: 24 Oct agreed at $36,403.04.',
+                'Comparing against 26 Oct report ($32,403.04) -> Identified variance: $4,000.00.',
+                'Cross-referencing QuickBooks live feed: Identified unposted $4k payment awaiting acceptance.',
+                'Delivering reconciliation findings and Cash tab settings update to Divya Jain.'
+            ],
+            badge: 'RECONCILED',
+            badgeClass: 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30',
+            header: 'Bank Feed Audit Outcome',
+            content: 'Discrepancy fully diagnosed. $4,000 feed payment flagged for Divya. QBO dashboard cash tab calibrated.'
+        },
+        {
+            id: 'timesheet',
+            title: 'Timesheet & Billing Run (£100/hr)',
+            desc: 'Logging 8.0 hours across 27-28 Oct for Chelsea Technologies, LLC (Invoice 39).',
+            steps: [
+                'Reviewing communications with Divya Jain & Gary Draper for 27-28 Oct...',
+                '27 Oct: 4.0 hrs (£400) - Normalised balance sheet v1 & QBO sync audit post-Adj 11.',
+                '28 Oct: 4.0 hrs (£400) - Break-Fix workbook & imports; West 7563 rec (Excluded 30-min intro call).',
+                'Accruing timesheet in /opt/data/chelsea_tech/Chelsea_Tech_Timesheet_October_2026.csv...',
+                'Total accrued MTD: 8.0 hrs (£800.00) -> Queued for month-end Invoice 39 dispatch.'
+            ],
+            badge: 'ACCRUED £800',
+            badgeClass: 'bg-amber-500/20 text-amber-400 border border-amber-500/30',
+            header: 'Billable Time Verified',
+            content: '8.0 hours logged at £100/hr (£800.00 total). Invoice 39 template queued for Gary Draper & Divya Jain.'
+        },
+        {
+            id: 'mgmtpack',
+            title: 'Management Pack Consolidation',
+            desc: 'Auditing 4 entities in QBO: LLC, West, Middle East, and Europe in USD.',
+            steps: [
+                'Fetching latest trial balances from QuickBooks API...',
+                'Normalising revenue recognition & eliminating intercompany transactions...',
+                'Reviewing 6 July/August LLC invoices flagged on test product "test 2-1"...',
+                'Rebuilding consolidated P&L and Balance Sheet schedules v2...',
+                'Exporting schedules workbook to NAS archive (/opt/data/chelsea_tech/).'
+            ],
+            badge: 'CONSOLIDATED',
+            badgeClass: 'bg-purple-500/20 text-purple-400 border border-purple-500/30',
+            header: 'Executive Reporting Ready',
+            content: 'Version 2 schedules delivered to Divya Jain. All intercompany balances eliminated in consolidated USD.'
+        }
+    ]
+};
 
-function runLiveSimulation() {
-    if (isRunning) return;
-    isRunning = true;
+let currentDomain = 'home';
+let selectedScenarioIdx = 0;
+let isExecuting = false;
 
-    const btn = document.getElementById('runSimBtn');
-    const badge = document.getElementById('simBadge');
-    const statusMeta = document.getElementById('simStatusMeta');
-    const progressLabel = document.getElementById('progressLabel');
-    const progressPct = document.getElementById('progressPct');
-    const progressBar = document.getElementById('progressBar');
+function renderScenarios() {
+    const list = document.getElementById('scenarioList');
+    const domainScenarios = scenarios[currentDomain];
+    list.innerHTML = '';
+
+    domainScenarios.forEach((s, idx) => {
+        const isSelected = idx === selectedScenarioIdx;
+        const btn = document.createElement('div');
+        btn.className = `p-4 rounded-xl border cursor-pointer transition-all ${
+            isSelected 
+                ? 'bg-slate-800 border-brand-500 shadow-md' 
+                : 'bg-slate-950 border-slate-800 hover:border-slate-700'
+        }`;
+        btn.onclick = () => selectScenario(idx);
+        btn.innerHTML = `
+            <div class="flex items-center justify-between mb-1">
+                <span class="text-sm font-bold text-white">${s.title}</span>
+                <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-300">${s.id}</span>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed">${s.desc}</p>
+        `;
+        list.appendChild(btn);
+    });
+}
+
+function selectScenario(idx) {
+    if (isExecuting) return;
+    selectedScenarioIdx = idx;
+    renderScenarios();
     
-    const barA = document.getElementById('barA');
-    const barB = document.getElementById('barB');
-    const barC = document.getElementById('barC');
-    const valA = document.getElementById('valA');
-    const valB = document.getElementById('valB');
-    const valC = document.getElementById('valC');
-    const recText = document.getElementById('recText');
+    // Reset view
+    const s = scenarios[currentDomain][idx];
+    document.getElementById('terminalSteps').innerHTML = `<div class="text-slate-400">> Selected: ${s.title}. Click 'Dispatch Autonomous Agent' to run.</div>`;
+    document.getElementById('agentBadge').innerText = 'READY';
+    document.getElementById('agentBadge').className = 'px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-slate-800 text-slate-300 border border-slate-700';
+    document.getElementById('agentStatusMeta').innerText = 'Status: Ready to trigger';
+    document.getElementById('artifactHeader').innerText = 'Deliverable Status';
+    document.getElementById('artifactContent').innerText = 'Awaiting execution. All agentic actions are backed by verified file artifacts and real tool outputs.';
+}
 
-    const cohort = document.getElementById('simCohort').value;
+function switchDomain(domain) {
+    if (isExecuting) return;
+    currentDomain = domain;
+    selectedScenarioIdx = 0;
+
+    const tabHome = document.getElementById('tabHome');
+    const tabBiz = document.getElementById('tabBiz');
+    const icon = document.getElementById('scenarioIcon');
+    const heading = document.getElementById('scenarioHeading');
+
+    if (domain === 'home') {
+        tabHome.className = 'px-6 py-2.5 rounded-xl text-sm font-bold bg-brand-600 text-white transition-all shadow-md';
+        tabBiz.className = 'px-6 py-2.5 rounded-xl text-sm font-bold text-slate-400 hover:text-white transition-all';
+        icon.innerText = '🏡';
+        heading.innerText = 'Select a Household Scenario';
+    } else {
+        tabBiz.className = 'px-6 py-2.5 rounded-xl text-sm font-bold bg-brand-600 text-white transition-all shadow-md';
+        tabHome.className = 'px-6 py-2.5 rounded-xl text-sm font-bold text-slate-400 hover:text-white transition-all';
+        icon.innerText = '💼';
+        heading.innerText = 'Select a Business Scenario';
+    }
+
+    renderScenarios();
+    selectScenario(0);
+}
+
+function executeScenario() {
+    if (isExecuting) return;
+    isExecuting = true;
+
+    const btn = document.getElementById('runActionBtn');
+    const terminal = document.getElementById('terminalSteps');
+    const badge = document.getElementById('agentBadge');
+    const statusMeta = document.getElementById('agentStatusMeta');
+    const artHeader = document.getElementById('artifactHeader');
+    const artContent = document.getElementById('artifactContent');
+
+    const s = scenarios[currentDomain][selectedScenarioIdx];
 
     btn.disabled = true;
     btn.classList.add('opacity-50', 'cursor-not-allowed');
 
-    // Reset UI
-    progressBar.style.width = '0%';
-    progressPct.innerText = '0%';
-    barA.style.width = '0%';
-    barB.style.width = '0%';
-    barC.style.width = '0%';
-    valA.innerText = '0%';
-    valB.innerText = '0%';
-    valC.innerText = '0%';
+    badge.innerText = 'EXECUTING';
+    badge.className = 'px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-brand-500/20 text-brand-400 border border-brand-500/30 animate-pulse';
+    statusMeta.innerText = 'Status: Dispatched autonomous Hermes sub-procedure...';
+    terminal.innerHTML = '';
 
-    // Step 1: Queued
-    badge.innerText = 'QUEUED';
-    badge.className = 'px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-amber-500/20 text-amber-400 border border-amber-500/30';
-    statusMeta.innerText = 'Allocating synthetic agent partitions...';
-    progressLabel.innerText = 'Initializing population parameters...';
-    progressBar.style.width = '20%';
-    progressPct.innerText = '20%';
-
-    setTimeout(() => {
-        // Step 2: Running
-        badge.innerText = 'RUNNING';
-        badge.className = 'px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-brand-500/20 text-brand-400 border border-brand-500/30 animate-pulse';
-        statusMeta.innerText = 'Executing cognitive inference across demographic nodes...';
-        progressLabel.innerText = 'Polling agents for perceptual resonance...';
-        progressBar.style.width = '65%';
-        progressPct.innerText = '65%';
-
-        setTimeout(() => {
-            // Step 3: Predicted
-            badge.innerText = 'PREDICTED';
-            badge.className = 'px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
-            statusMeta.innerText = 'Statistical convergence reached (Confidence: 98.2%)';
-            progressLabel.innerText = 'Simulation finalized in 142ms.';
-            progressBar.style.width = '100%';
-            progressPct.innerText = '100%';
-
-            // Dynamic results based on cohort
-            if (cohort === 'fintech') {
-                barA.style.width = '52%';
-                barB.style.width = '41%';
-                barC.style.width = '7%';
-                valA.innerText = '52%';
-                valB.innerText = '41%';
-                valC.innerText = '7%';
-                recText.innerHTML = 'Financial Officers prioritize <strong class="text-white">Option B (Annual Discount)</strong> significantly more than tech founders. Emphasize predictability and balance sheet amortization.';
-            } else if (cohort === 'genz') {
-                barA.style.width = '84%';
-                barB.style.width = '11%';
-                barC.style.width = '5%';
-                valA.innerText = '84%';
-                valB.innerText = '11%';
-                valC.innerText = '5%';
-                recText.innerHTML = 'Extreme preference for <strong class="text-white">Option A (Zero-commitment Usage)</strong>. Any upfront barrier creates over 70% immediate drop-off.';
-            } else {
-                barA.style.width = '68%';
-                barB.style.width = '24%';
-                barC.style.width = '8%';
-                valA.innerText = '68%';
-                valB.innerText = '24%';
-                valC.innerText = '8%';
-                recText.innerHTML = 'Cohort sentiment strongly favors <strong class="text-white">Option A</strong> due to zero upfront commitment. Recommend leading with usage-based pilots in all outbound announcements.';
-            }
+    let stepIdx = 0;
+    const interval = setInterval(() => {
+        if (stepIdx < s.steps.length) {
+            const line = document.createElement('div');
+            line.className = 'text-slate-300';
+            line.innerHTML = `<span class="text-brand-400">[$]</span> ${s.steps[stepIdx]}`;
+            terminal.appendChild(line);
+            terminal.scrollTop = terminal.scrollHeight;
+            stepIdx++;
+        } else {
+            clearInterval(interval);
+            // Completed
+            badge.innerText = s.badge;
+            badge.className = `px-2.5 py-1 rounded-full text-xs font-mono font-medium ${s.badgeClass}`;
+            statusMeta.innerText = 'Status: Completed & verified on local NAS';
+            artHeader.innerText = s.header;
+            artHeader.className = 'text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold mb-1';
+            artContent.innerHTML = s.content;
 
             btn.disabled = false;
             btn.classList.remove('opacity-50', 'cursor-not-allowed');
-            isRunning = false;
-        }, 900);
-    }, 700);
+            isExecuting = false;
+        }
+    }, 450);
 }
+
+// Initialise
+document.addEventListener('DOMContentLoaded', () => {
+    renderScenarios();
+    selectScenario(0);
+});
 </script>
 {% endblock %}

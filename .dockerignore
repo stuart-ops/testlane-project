@@ -1,0 +1,79 @@
+# ============================================================================
+# .dockerignore — Exclude everything that shouldn't reach the build context
+# ============================================================================
+
+# Secrets and environment
+.env
+.env.*
+*.tfvars
+terraform.tfvars
+credentials.json
+service-account*.json
+*.pem
+*.key
+
+# Version control
+.git
+.gitignore
+.gitattributes
+.github
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.eggs/
+.mypy_cache/
+.pytest_cache/
+.tox/
+.nox/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Pre-built static files (we rebuild them in the image)
+staticfiles/
+!staticfiles/.gitkeep
+
+# Database and local state
+db.sqlite3
+db.sqlite3-journal
+*.sql
+
+# IDE and editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Render / Railway legacy
+Procfile
+build.sh
+render.yaml
+railway.json
+render_*.json
+
+# Infrastructure (deployed separately)
+infra/
+specs/
+
+# Media uploads (kept outside the image)
+media/
+
+# Local cache
+.cache/
+.scrapy/
+*.log
+
+# Documentation
+*.md
+!README.md
+docs/

@@ -12,6 +12,13 @@ SECRET_KEY = config('SECRET_KEY', default='django-insecure-change-in-production'
 DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='testlane.ai,www.testlane.ai,localhost').split(',')
 
+# Cloud Run health check and Cloudflare proxy compatibility
+CSRF_TRUSTED_ORIGINS = [
+    scheme + '://' + host.strip()
+    for host in ALLOWED_HOSTS
+    for scheme in ('https', 'http')
+]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

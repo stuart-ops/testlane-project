@@ -31,7 +31,7 @@ gcloud run deploy "${SERVICE_NAME}" \
   --max-instances 5 \
   --memory 512Mi \
   --cpu 1 \
-  --set-env-vars "DJANGO_DEBUG=False,ALLOWED_HOSTS=testlane.ai,www.testlane.ai,.a.run.app"
+  --set-env-vars "^:^DJANGO_DEBUG=False:ALLOWED_HOSTS=testlane.ai,www.testlane.ai,.a.run.app"
 
 echo "== Done! Service URL:"
 SERVICE_URL=$(gcloud run services describe "${SERVICE_NAME}" --region "${REGION}" --format "value(status.url)")

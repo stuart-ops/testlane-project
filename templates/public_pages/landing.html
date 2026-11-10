@@ -1,628 +1,266 @@
-{% extends 'public_pages/base_public.html' %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Testlane.ai — Sovereign AI & Autonomous Operations. High-trust, privacy-first AI that runs on your infrastructure, not ours.">
+  <title>Testlane.ai — Sovereign AI & Autonomous Operations</title>
+  <link rel="stylesheet" href="{% static 'css/design-system.css' %}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2300f0ff'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='18' fill='%230a0a0c'>T</text></svg>">
+</head>
+<body>
 
-{% block title %}Testlane - Sovereign AI for Home & Business Operations{% endblock %}
+<!-- ===== NAVIGATION ===== -->
+<header class="container">
+  <nav class="nav">
+    <a href="/" class="nav-logo">Testlane<span>.ai</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('nav-links-open');">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="#case-studies">Case Studies</a>
+      <a href="#playbook">Playbook</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#contact" class="btn btn-ghost" style="padding:0.5rem 1rem;">Contact</a>
+    </div>
+  </nav>
+</header>
 
-{% block content %}
-<!-- Hero Section -->
-<section class="relative overflow-hidden pt-20 pb-28 md:pt-32 md:pb-36 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900 border-b border-slate-800/80">
-    <!-- Ambient Glow Background -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[380px] bg-brand-600/20 rounded-full blur-[140px] pointer-events-none"></div>
-    <div class="absolute top-1/3 left-1/4 w-[450px] h-[320px] bg-indigo-500/15 rounded-full blur-[120px] pointer-events-none"></div>
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="glow-cyan" style="top:-10%;left:-10%;"></div>
+  <div class="glow-emerald" style="bottom:-5%;right:-5%;"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="pill" style="margin-bottom:var(--space-4);">
+        <span class="pill-dot pill-dot-cyan"></span>
+        Sovereign AI Operations — Now Live
+      </div>
+      <h1>Sovereign AI That Runs on Your Infrastructure</h1>
+      <p>
+        High-trust, privacy-first autonomous operations for regulated enterprises.
+        Zero public cloud training data leakage. Zero SaaS sprawl.
+        Your data never leaves your perimeter.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Deploy Sovereign AI →</a>
+        <a href="#case-studies" class="btn btn-secondary">See Case Studies</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <!-- Status Pill -->
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-8">
-            <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Sovereign Architecture • Zero Cloud Data Leaks
-        </div>
-
-        <!-- Main Headline -->
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.1] mb-8">
-            Sovereign AI Agents for <br class="hidden sm:block">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-400 via-indigo-300 to-white">
-                Home & Business Operations.
-            </span>
-        </h1>
-
-        <!-- Subheadline -->
-        <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10 font-normal">
-            An unflappable, autonomous personal assistant and fractional FD running on dedicated local hardware. Deployed to clear household clutter, protect family time, and execute high-stakes corporate finance.
+<!-- ===== THREE PILLARS ===== -->
+<section id="pillars">
+  <div class="container">
+    <div class="section-label">The Three Pillars</div>
+    <h2 class="section-heading">Autonomous Operations, Sovereign Infrastructure</h2>
+    <p class="section-subheading">Three integrated capabilities that transform how regulated enterprises run AI — all on your hardware, behind your firewall.</p>
+    <div class="grid-3">
+      <div class="card animate-in">
+        <div style="font-size:2rem;margin-bottom:var(--space-4);">📊</div>
+        <h3>Autonomous Finance Operations</h3>
+        <p style="color:var(--text-secondary);margin-top:var(--space-3);">
+          Multi-entity ledger sync, automated intercompany reconciliation, live executive dashboards, and AI-driven variance analysis — running on scheduled Cloud Run jobs with zero human touch. Fractional FD as code.
         </p>
-
-        <!-- Call to Actions -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <a href="#interactive-sandbox" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-brand-600 hover:bg-brand-500 shadow-lg shadow-brand-600/30 hover:shadow-brand-500/50 transition-all duration-200">
-                <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                Explore Live Use Cases
-            </a>
-            <a href="#video-tour" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-slate-600 transition-all duration-200">
-                Watch System Video
-            </a>
-            <a href="#sovereign-stack" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-brand-400 hover:text-white transition">
-                Architecture Blueprint &rarr;
-            </a>
-        </div>
-
-        <!-- Social Proof Stats -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto pt-8 border-t border-slate-800/60">
-            <div>
-                <div class="text-3xl font-bold text-white font-mono">100%</div>
-                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Data Sovereignty (NAS)</div>
-            </div>
-            <div>
-                <div class="text-3xl font-bold text-brand-400 font-mono">£100/hr</div>
-                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Automated Billing Capture</div>
-            </div>
-            <div>
-                <div class="text-3xl font-bold text-emerald-400 font-mono">Hands-Free</div>
-                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Commute Voice Operations</div>
-            </div>
-            <div>
-                <div class="text-3xl font-bold text-indigo-400 font-mono">Zero Cloud</div>
-                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Privacy-Preserving Vault</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Product Video Tour Section -->
-<section id="video-tour" class="py-24 bg-dark-900 border-b border-slate-800/80">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <span class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Sovereign Deployment Tour</span>
-            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">See Autonomous Agents in Production</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto mt-3 text-base">
-                Real-world execution: from hands-free morning commute briefs and property contractor negotiations to QuickBooks daily bank reconciliation and timesheet accrual.
-            </p>
-        </div>
-
-        <!-- Video Mockup Frame -->
-        <div class="relative rounded-2xl p-2 sm:p-3 bg-gradient-to-b from-slate-700/50 to-slate-800/20 border border-slate-700 shadow-2xl glow-blue">
-            <!-- Window Titlebar -->
-            <div class="flex items-center justify-between px-4 py-2.5 bg-dark-950/90 rounded-t-xl border-b border-slate-800">
-                <div class="flex items-center space-x-2">
-                    <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
-                    <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
-                    <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
-                </div>
-                <div class="text-xs font-mono text-slate-400 flex items-center gap-2">
-                    <svg class="w-3.5 h-3.5 text-brand-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    gem@home-server:~/workspace/demo_home_and_business.mp4
-                </div>
-                <div class="text-xs text-slate-500 font-mono">1080p • NAS Docker Native</div>
-            </div>
-
-            <!-- Video Player -->
-            <div class="relative bg-black rounded-b-xl overflow-hidden aspect-video flex items-center justify-center">
-                <video id="demoVideo" class="w-full h-full object-cover" autoplay loop muted playsinline controls>
-                    <source src="/media/testlane_agentic_demo.mp4" type="video/mp4">
-                    <source src="{% static 'public_pages/videos/testlane_agentic_demo.mp4' %}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-
-        <!-- 3 Pillars Breakdown -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-            <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div class="text-brand-400 font-mono text-xs font-semibold mb-1">PILLAR 01</div>
-                <h4 class="text-white font-semibold text-base mb-1">Home & Family Ops</h4>
-                <p class="text-slate-400 text-sm">Automated contractor quotes, tenancies (Nithdale Rd), school runs, and commute audio briefings.</p>
-            </div>
-            <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div class="text-emerald-400 font-mono text-xs font-semibold mb-1">PILLAR 02</div>
-                <h4 class="text-white font-semibold text-base mb-1">Fractional FD & Finance</h4>
-                <p class="text-slate-400 text-sm">QuickBooks multi-entity sync, daily cash dashboards, £100/hr billing accruals, and month-end invoicing.</p>
-            </div>
-            <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div class="text-indigo-400 font-mono text-xs font-semibold mb-1">PILLAR 03</div>
-                <h4 class="text-white font-semibold text-base mb-1">Sovereign-First Stack</h4>
-                <p class="text-slate-400 text-sm">Runs on your NAS. Your photos, bank feeds, contracts, and chat logs stay entirely in your own hands.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Interactive Live Use-Case Sandbox -->
-<section id="interactive-sandbox" class="py-24 bg-dark-950 border-b border-slate-800/80 relative">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-14">
-            <span class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Interactive Use-Case Explorer</span>
-            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Test Live Workflows in Real Time</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto mt-3 text-base">
-                Switch between Home Operations and Business Finance to see how the agent reasons, executes, and verifies tasks.
-            </p>
-        </div>
-
-        <!-- Mode Toggle Tabs -->
-        <div class="flex justify-center mb-10">
-            <div class="bg-slate-900 p-1.5 rounded-2xl border border-slate-800 flex space-x-2">
-                <button id="tabHome" onclick="switchDomain('home')" class="px-6 py-2.5 rounded-xl text-sm font-bold bg-brand-600 text-white transition-all shadow-md">
-                    🏡 Home & Family Operations
-                </button>
-                <button id="tabBiz" onclick="switchDomain('business')" class="px-6 py-2.5 rounded-xl text-sm font-bold text-slate-400 hover:text-white transition-all">
-                    💼 Business & Fractional FD
-                </button>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <!-- Left: Scenario Selector -->
-            <div class="lg:col-span-5 bg-slate-900/90 rounded-2xl p-6 sm:p-8 border border-slate-800 shadow-xl">
-                <h3 class="text-lg font-bold text-white mb-5 flex items-center">
-                    <span id="scenarioIcon" class="mr-2.5 text-brand-400">🏡</span>
-                    <span id="scenarioHeading">Select a Household Scenario</span>
-                </h3>
-
-                <div id="scenarioList" class="space-y-3 mb-6">
-                    <!-- Injected via JavaScript -->
-                </div>
-
-                <button id="runActionBtn" onclick="executeScenario()" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-brand-600/30 transition flex items-center justify-center gap-2">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                    </svg>
-                    Dispatch Autonomous Agent
-                </button>
-            </div>
-
-            <!-- Right: Execution Transcript & Verifiable Outcome -->
-            <div class="lg:col-span-7 bg-slate-900/90 rounded-2xl p-6 sm:p-8 border border-slate-800 shadow-xl">
-                <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
-                    <div>
-                        <h4 class="text-base font-bold text-white">Agent Execution Log</h4>
-                        <div class="text-xs text-slate-400 font-mono mt-0.5" id="agentStatusMeta">Status: Idle & listening</div>
-                    </div>
-                    <span id="agentBadge" class="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-slate-800 text-slate-300 border border-slate-700">
-                        READY
-                    </span>
-                </div>
-
-                <!-- Terminal Step Output -->
-                <div id="terminalSteps" class="font-mono text-xs space-y-2.5 bg-dark-950 p-5 rounded-xl border border-slate-800 mb-6 min-h-[180px] overflow-y-auto">
-                    <div class="text-slate-500">> Select a scenario on the left and click 'Dispatch Autonomous Agent'...</div>
-                </div>
-
-                <!-- Verified Artifact Result Box -->
-                <div id="artifactBox" class="p-5 rounded-xl bg-slate-950/90 border border-slate-800 transition-all">
-                    <div class="text-xs font-mono uppercase tracking-wider text-slate-500 font-semibold mb-1" id="artifactHeader">Deliverable Status</div>
-                    <p id="artifactContent" class="text-sm text-slate-400 leading-relaxed">
-                        Awaiting execution. All agentic actions are backed by verified file artifacts and real tool outputs.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Deep Dive: Use Cases Grid -->
-<section id="features" class="py-24 bg-dark-900 border-b border-slate-800/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <span class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Complete Coverage</span>
-            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Engineered for Real-World Demands</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto mt-3 text-base">
-                Bridging executive business finance with private family life management.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Card 1: Property Maintenance -->
-            <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 glow-card transition-all duration-300 flex flex-col justify-between">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Sovereign Property Ops</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-4">
-                        Autonomous trade quote procurement, tenant communication, contractor oversight, and maintenance tracking across rental properties (Nithdale Rd, Carpenters Arms, Lion Lodge).
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-slate-800/80 text-xs font-mono text-brand-400">
-                    Use Case: Family Time Protection
-                </div>
-            </div>
-
-            <!-- Card 2: Voice Commute Briefing -->
-            <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 glow-card transition-all duration-300 flex flex-col justify-between">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Hands-Free Commute Voice</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-4">
-                        Turn-by-turn voice briefings tuned for hands-free driving in the Peugeot (6:10–7:00 AM commute). School run logistics, daily weather, appointment reminders, and zero faffing.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-slate-800/80 text-xs font-mono text-emerald-400">
-                    Use Case: Driver Safety & Clarity
-                </div>
-            </div>
-
-            <!-- Card 3: Photo Vault -->
-            <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 glow-card transition-all duration-300 flex flex-col justify-between">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Self-Hosted Photo Vault</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-4">
-                        Automatic ingestion of phone camera rolls directly to 3.7TB on-premise NAS storage (Immich pipeline), paired with cold GCS offsite backup to cancel recurring cloud subscription fees.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-slate-800/80 text-xs font-mono text-purple-400">
-                    Use Case: Total Digital Sovereignty
-                </div>
-            </div>
-
-            <!-- Card 4: Fractional FD Controller -->
-            <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 glow-card transition-all duration-300 flex flex-col justify-between">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Autonomous FD Controller</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-4">
-                        Nightly QuickBooks ledger ingestion across 4 entities (US LLC, West, Middle East, Europe). Balance sheet normalisation, intercompany eliminations, and Daily Cash dashboard sync.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-slate-800/80 text-xs font-mono text-indigo-400">
-                    Use Case: Executive Financial Control
-                </div>
-            </div>
-
-            <!-- Card 5: Timesheet & Invoicing -->
-            <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 glow-card transition-all duration-300 flex flex-col justify-between">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Automated Billing & Invoices</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-4">
-                        Continuous timesheet capture (£100/hr), auditing communications against completed deliverables, and month-end invoice PDF generation dispatched straight to client accounts payable.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-slate-800/80 text-xs font-mono text-amber-400">
-                    Use Case: Zero-Admin Remittance
-                </div>
-            </div>
-
-            <!-- Card 6: Life Ops Compliance -->
-            <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 glow-card transition-all duration-300 flex flex-col justify-between">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Domestic Compliance Radar</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-4">
-                        Direct DVLA vehicle API lookups (MOT & Tax countdowns for WN21 HLO), insurance policy renewals, So Energy direct debit scrutinisation, and Council bin schedule dispatch.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-slate-800/80 text-xs font-mono text-rose-400">
-                    Use Case: Household Peace of Mind
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Architecture Blueprint Section -->
-<section id="sovereign-stack" class="py-24 bg-dark-950 border-b border-slate-800/80">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <span class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Hardware & Network Topology</span>
-            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">The Sovereign Infrastructure</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto mt-3 text-base">
-                How we run autonomous AI agents in your own home with zero exposure to public internet attacks.
-            </p>
-        </div>
-
-        <div class="p-8 sm:p-12 rounded-3xl bg-slate-900/80 border border-slate-800 shadow-2xl relative overflow-hidden">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Node 1 -->
-                <div class="border-l-2 border-brand-500 pl-6">
-                    <div class="text-brand-400 font-mono text-xs uppercase mb-1">01 • CORE HARDWARE</div>
-                    <h4 class="text-lg font-bold text-white mb-2">UGREEN NASync N100</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Intel N100, 8GB DDR5, 3.7TB Btrfs storage. Runs the Hermes Docker gateway daemon on local host IP `192.168.1.24`.
-                    </p>
-                </div>
-
-                <!-- Node 2 -->
-                <div class="border-l-2 border-indigo-500 pl-6">
-                    <div class="text-indigo-400 font-mono text-xs uppercase mb-1">02 • ZERO-TRUST NETWORK</div>
-                    <h4 class="text-lg font-bold text-white mb-2">Tailscale Mesh Topology</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        End-to-end WireGuard tunnel. No open inbound ports or router port forwards. Authenticates Stuart's phone, laptop, and NAS.
-                    </p>
-                </div>
-
-                <!-- Node 3 -->
-                <div class="border-l-2 border-emerald-500 pl-6">
-                    <div class="text-emerald-400 font-mono text-xs uppercase mb-1">03 • LOCAL STATE & SYNC</div>
-                    <h4 class="text-lg font-bold text-white mb-2">Obsidian + Syncthing Vault</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Task state, Kanban boards, and financial logs synchronise directly between phone and NAS with zero cloud intermediary.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Final Call to Action -->
-<section class="py-24 bg-gradient-to-t from-dark-950 to-dark-900 relative">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
-            Autonomous Execution. <br>Total Privacy. Zero Faffing.
-        </h2>
-        <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-            The family-first, sovereign AI operating system that protects your peace of mind and keeps corporate finances impeccably reconciled.
+      </div>
+      <div class="card animate-in" style="animation-delay:0.1s;">
+        <div style="font-size:2rem;margin-bottom:var(--space-4);">🎙️</div>
+        <h3>Sovereign Voice & Meeting Intelligence</h3>
+        <p style="color:var(--text-secondary);margin-top:var(--space-3);">
+          100% on-premise boardroom and transit voice transcription. Executive minutes generation and action-item extraction — audio never leaves the client's network. Local Whisper model on dedicated hardware.
         </p>
-
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            {% if user.is_authenticated %}
-                <a href="{% url 'home' %}" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-white bg-brand-600 hover:bg-brand-500 shadow-xl shadow-brand-600/30 transition">
-                    Access Dashboard
-                </a>
-            {% else %}
-                <a href="{% url 'signup' %}" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-white bg-brand-600 hover:bg-brand-500 shadow-xl shadow-brand-600/30 transition">
-                    Get Started Free
-                </a>
-                <a href="mailto:stuart@testlane.ai" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition">
-                    Contact Stuart Lyons
-                </a>
-            {% endif %}
-        </div>
+      </div>
+      <div class="card animate-in" style="animation-delay:0.2s;">
+        <div style="font-size:2rem;margin-bottom:var(--space-4);">🔐</div>
+        <h3>Compliance & Document Vault</h3>
+        <p style="color:var(--text-secondary);margin-top:var(--space-3);">
+          Statutory compliance tracking, auto-filing from email and OCR, audit-ready document management, and deadline radar — all indexed locally with DuckDB, never in a cloud document store.
+        </p>
+      </div>
     </div>
+  </div>
 </section>
-{% endblock %}
 
-{% block scripts %}
-<script>
-// Scenarios Data
-const scenarios = {
-    home: [
-        {
-            id: 'pest',
-            title: 'Pest Control Tender Review',
-            desc: 'BPCA competitive tender for 67 Ospringe Street: GEM (£225, 6 visits) vs Imperium (£300, 3 visits).',
-            steps: [
-                'Checking BPCA tender submissions in local NAS inbox...',
-                'Vendor A: Imperium Pest Control - £300 inc. VAT (3 visits, Earliest: 2 Nov)',
-                'Vendor B: GEM Services (Nate Green) - £225 total, no VAT (Up to 6 visits, Earliest: This week)',
-                'Applying Family First rule: Scrutinise overpriced quotes, protect buffers.',
-                'Recommendation: GEM Services saves £75, provides double the visits, and arrives sooner.'
-            ],
-            badge: 'TENDER WON',
-            badgeClass: 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30',
-            header: 'Verified Sovereign Decision',
-            content: 'GEM Services confirmed for £225 (no VAT). Family savings: £75.00. Booking confirmation dispatched.'
-        },
-        {
-            id: 'gutter',
-            title: '16 Nithdale Rd Gutter Tender',
-            desc: 'Instruction to Wesley Tom for pre-winter debris inspection & clearance.',
-            steps: [
-                'Reading tenancy file for 16 Nithdale Road, SE18 3PA...',
-                'Composing formal instruction to Wesley Tom (wesley@clht.org)...',
-                'CC added: Angelina Lyons (angelina.s.lyons@gmail.com)...',
-                'Sending instruction email via Google Workspace API...',
-                'Updating Kanban board in local Obsidian vault via Syncthing...'
-            ],
-            badge: 'DISPATCHED',
-            badgeClass: 'bg-brand-500/20 text-brand-400 border border-brand-500/30',
-            header: 'Email & Board Verification',
-            content: 'Email sent successfully (Message ID: 1a18134b4bb5b300). Gutter clearance moved to Done on Kanban.'
-        },
-        {
-            id: 'commute',
-            title: 'Peugeot Commute Voice Brief',
-            desc: '6:10 AM hands-free driving synthesis: school schedules, appointments, weather.',
-            steps: [
-                'Checking family calendar & half-term schedules...',
-                'Elijah: 10:30 AM Dentist -> 11:30 AM One-on-one with Jenin.',
-                'Olympia: MSDA Holiday Club attendance confirmed.',
-                'Weather: 6°C Faversham -> 15°C Northfleet (Low rain risk 20%).',
-                'Synthesizing concise audio speech via Edge TTS (1.18x speed)...'
-            ],
-            badge: 'VOICE SENT',
-            badgeClass: 'bg-indigo-500/20 text-indigo-400 border border-indigo-500/30',
-            header: 'Driver Safety Delivery',
-            content: '2-sentence crisp audio note delivered to Telegram for hands-free Bluetooth car playback.'
-        }
-    ],
-    business: [
-        {
-            id: 'bankrec',
-            title: 'Daily Bank & Feed Reconciliation',
-            desc: 'Multi-entity reconciliation on BofA West 7563 against daily cash reports.',
-            steps: [
-                'Accessing Google Sheet (ID: 1Gh9uXFO38AnJmu_vo7NsjeV-vsNEVPHlgbg2lAx4flw)...',
-                'Auditing West 7563 balance: 24 Oct agreed at $36,403.04.',
-                'Comparing against 26 Oct report ($32,403.04) -> Identified variance: $4,000.00.',
-                'Cross-referencing QuickBooks live feed: Identified unposted $4k payment awaiting acceptance.',
-                'Delivering reconciliation findings and Cash tab settings update to Divya Jain.'
-            ],
-            badge: 'RECONCILED',
-            badgeClass: 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30',
-            header: 'Bank Feed Audit Outcome',
-            content: 'Discrepancy fully diagnosed. $4,000 feed payment flagged for Divya. QBO dashboard cash tab calibrated.'
-        },
-        {
-            id: 'timesheet',
-            title: 'Timesheet & Billing Run (£100/hr)',
-            desc: 'Logging 8.0 hours across 27-28 Oct for Chelsea Technologies, LLC (Invoice 39).',
-            steps: [
-                'Reviewing communications with Divya Jain & Gary Draper for 27-28 Oct...',
-                '27 Oct: 4.0 hrs (£400) - Normalised balance sheet v1 & QBO sync audit post-Adj 11.',
-                '28 Oct: 4.0 hrs (£400) - Break-Fix workbook & imports; West 7563 rec (Excluded 30-min intro call).',
-                'Accruing timesheet in /opt/data/chelsea_tech/Chelsea_Tech_Timesheet_October_2026.csv...',
-                'Total accrued MTD: 8.0 hrs (£800.00) -> Queued for month-end Invoice 39 dispatch.'
-            ],
-            badge: 'ACCRUED £800',
-            badgeClass: 'bg-amber-500/20 text-amber-400 border border-amber-500/30',
-            header: 'Billable Time Verified',
-            content: '8.0 hours logged at £100/hr (£800.00 total). Invoice 39 template queued for Gary Draper & Divya Jain.'
-        },
-        {
-            id: 'mgmtpack',
-            title: 'Management Pack Consolidation',
-            desc: 'Auditing 4 entities in QBO: LLC, West, Middle East, and Europe in USD.',
-            steps: [
-                'Fetching latest trial balances from QuickBooks API...',
-                'Normalising revenue recognition & eliminating intercompany transactions...',
-                'Reviewing 6 July/August LLC invoices flagged on test product "test 2-1"...',
-                'Rebuilding consolidated P&L and Balance Sheet schedules v2...',
-                'Exporting schedules workbook to NAS archive (/opt/data/chelsea_tech/).'
-            ],
-            badge: 'CONSOLIDATED',
-            badgeClass: 'bg-purple-500/20 text-purple-400 border border-purple-500/30',
-            header: 'Executive Reporting Ready',
-            content: 'Version 2 schedules delivered to Divya Jain. All intercompany balances eliminated in consolidated USD.'
-        }
-    ]
-};
+<!-- ===== CASE STUDIES ===== -->
+<section id="case-studies">
+  <div class="container">
+    <div class="section-label">Anonymised Case Studies</div>
+    <h2 class="section-heading">Proven in Production</h2>
+    <p class="section-subheading">Four real-world deployments demonstrating sovereign AI operations across finance, energy, voice intelligence, and compliance. All client identities strictly anonymised.</p>
+    <div class="grid-2" style="margin-top:var(--space-8);">
+      <a href="/case-studies/msp-group/" class="case-study-card">
+        <div class="pill" style="margin-bottom:var(--space-4);">
+          <span class="pill-dot"></span>
+          Multi-Entity Finance
+        </div>
+        <h3>Transatlantic MSP Group — $16M ARR</h3>
+        <p>Four-entity QBO consolidation across three jurisdictions (US, UK, UAE). Nightly automated sync replaced 5–7 days of manual spreadsheet work per month. 308/308 pack tie-out checks verified to the cent.</p>
+        <p style="margin-top:var(--space-3);color:var(--accent-cyan);font-weight:600;font-size:0.875rem;">Read case study →</p>
+      </a>
+      <a href="/case-studies/energy-operator/" class="case-study-card">
+        <div class="pill" style="margin-bottom:var(--space-4);">
+          <span class="pill-dot pill-dot-cyan"></span>
+          Energy Valuation
+        </div>
+        <h3>LSE-Listed Upstream Energy Producer</h3>
+        <p>Dynamic DCF valuation engine repricing off live Brent and NBP gas forward curves. Full model execution in milliseconds — replacing hours of manual spreadsheet updates for board presentations.</p>
+        <p style="margin-top:var(--space-3);color:var(--accent-cyan);font-weight:600;font-size:0.875rem;">Read case study →</p>
+      </a>
+      <a href="/case-studies/sovereign-whisper/" class="case-study-card">
+        <div class="pill" style="margin-bottom:var(--space-4);">
+          <span class="pill-dot"></span>
+          Voice Intelligence
+        </div>
+        <h3>Sovereign Whisper — Boardroom Intelligence</h3>
+        <p>100% on-premise meeting transcription and executive minutes. Local Whisper model on NAS hardware. Audio never transits a public cloud. Minutes delivered within 15 minutes of meeting end.</p>
+        <p style="margin-top:var(--space-3);color:var(--accent-cyan);font-weight:600;font-size:0.875rem;">Read case study →</p>
+      </a>
+      <a href="/case-studies/compliance-vault/" class="case-study-card">
+        <div class="pill" style="margin-bottom:var(--space-4);">
+          <span class="pill-dot"></span>
+          Compliance
+        </div>
+        <h3>Sovereign Property & Compliance Vault</h3>
+        <p>Automated deadline radar across property portfolios: gas safety certificates, EICR electrical reports, EPC ratings, insurance renewals, tenancy deposit protections. OCR ingestion from email, local DuckDB indexing.</p>
+        <p style="margin-top:var(--space-3);color:var(--accent-cyan);font-weight:600;font-size:0.875rem;">Read case study →</p>
+      </a>
+    </div>
+  </div>
+</section>
 
-let currentDomain = 'home';
-let selectedScenarioIdx = 0;
-let isExecuting = false;
+<!-- ===== LIVE ARCHITECTURE ===== -->
+<section id="architecture" style="background:linear-gradient(180deg, var(--bg-primary), rgba(18,18,22,0.5), var(--bg-primary));">
+  <div class="container">
+    <div class="section-label">Infrastructure</div>
+    <h2 class="section-heading">Sovereign AI Architecture</h2>
+    <p class="section-subheading">Every Testlane deployment follows the same battle-tested blueprint. Terraform-defined, Cloudflare-gated, scale-to-zero economics.</p>
 
-function renderScenarios() {
-    const list = document.getElementById('scenarioList');
-    const domainScenarios = scenarios[currentDomain];
-    list.innerHTML = '';
+    <div class="arch-diagram">
+      <div class="arch-node">
+        <div class="arch-node-label">Cloudflare</div>
+        <div class="arch-node-desc">WAF · Zero Trust · DDoS</div>
+      </div>
+      <span class="arch-arrow">→</span>
+      <div class="arch-node">
+        <div class="arch-node-label">Cloud Run</div>
+        <div class="arch-node-desc">Scale-to-Zero · VPC Egress</div>
+      </div>
+      <span class="arch-arrow">→</span>
+      <div class="arch-node">
+        <div class="arch-node-label">BigQuery</div>
+        <div class="arch-node-desc">Isolated Dataset · SQL</div>
+      </div>
+      <span class="arch-arrow">↔</span>
+      <div class="arch-node">
+        <div class="arch-node-label">NAS / On-Prem</div>
+        <div class="arch-node-desc">Whisper · DuckDB · Hermes</div>
+      </div>
+    </div>
 
-    domainScenarios.forEach((s, idx) => {
-        const isSelected = idx === selectedScenarioIdx;
-        const btn = document.createElement('div');
-        btn.className = `p-4 rounded-xl border cursor-pointer transition-all ${
-            isSelected 
-                ? 'bg-slate-800 border-brand-500 shadow-md' 
-                : 'bg-slate-950 border-slate-800 hover:border-slate-700'
-        }`;
-        btn.onclick = () => selectScenario(idx);
-        btn.innerHTML = `
-            <div class="flex items-center justify-between mb-1">
-                <span class="text-sm font-bold text-white">${s.title}</span>
-                <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-300">${s.id}</span>
-            </div>
-            <p class="text-xs text-slate-400 leading-relaxed">${s.desc}</p>
-        `;
-        list.appendChild(btn);
-    });
-}
+    <div class="code-block" style="max-width:52rem;margin:var(--space-8) auto 0;">
+      <code>
+<span class="code-keyword">resource</span> <span class="code-string">"google_cloud_run_v2_service"</span> <span class="code-string">"dashboard"</span> {
+  <span class="code-keyword">name</span>     = <span class="code-string">"client-dash"</span>
+  <span class="code-keyword">ingress</span>  = <span class="code-string">"INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER"</span>
 
-function selectScenario(idx) {
-    if (isExecuting) return;
-    selectedScenarioIdx = idx;
-    renderScenarios();
-    
-    // Reset view
-    const s = scenarios[currentDomain][idx];
-    document.getElementById('terminalSteps').innerHTML = `<div class="text-slate-400">> Selected: ${s.title}. Click 'Dispatch Autonomous Agent' to run.</div>`;
-    document.getElementById('agentBadge').innerText = 'READY';
-    document.getElementById('agentBadge').className = 'px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-slate-800 text-slate-300 border border-slate-700';
-    document.getElementById('agentStatusMeta').innerText = 'Status: Ready to trigger';
-    document.getElementById('artifactHeader').innerText = 'Deliverable Status';
-    document.getElementById('artifactContent').innerText = 'Awaiting execution. All agentic actions are backed by verified file artifacts and real tool outputs.';
-}
-
-function switchDomain(domain) {
-    if (isExecuting) return;
-    currentDomain = domain;
-    selectedScenarioIdx = 0;
-
-    const tabHome = document.getElementById('tabHome');
-    const tabBiz = document.getElementById('tabBiz');
-    const icon = document.getElementById('scenarioIcon');
-    const heading = document.getElementById('scenarioHeading');
-
-    if (domain === 'home') {
-        tabHome.className = 'px-6 py-2.5 rounded-xl text-sm font-bold bg-brand-600 text-white transition-all shadow-md';
-        tabBiz.className = 'px-6 py-2.5 rounded-xl text-sm font-bold text-slate-400 hover:text-white transition-all';
-        icon.innerText = '🏡';
-        heading.innerText = 'Select a Household Scenario';
-    } else {
-        tabBiz.className = 'px-6 py-2.5 rounded-xl text-sm font-bold bg-brand-600 text-white transition-all shadow-md';
-        tabHome.className = 'px-6 py-2.5 rounded-xl text-sm font-bold text-slate-400 hover:text-white transition-all';
-        icon.innerText = '💼';
-        heading.innerText = 'Select a Business Scenario';
+  <span class="code-keyword">template</span> {
+    <span class="code-keyword">scaling</span> {
+      <span class="code-keyword">min_instance_count</span> = <span class="code-string">0</span>   <span class="code-comment"># Scale-to-zero: zero idle cost</span>
+      <span class="code-keyword">max_instance_count</span> = <span class="code-string">5</span>   <span class="code-comment"># Denial-of-wallet cap</span>
     }
-
-    renderScenarios();
-    selectScenario(0);
+    <span class="code-keyword">containers</span> {
+      <span class="code-keyword">image</span> = <span class="code-string">"gcr.io/project/client-dash:latest"</span>
+    }
+  }
 }
+      </code>
+    </div>
+  </div>
+</section>
 
-function executeScenario() {
-    if (isExecuting) return;
-    isExecuting = true;
+<!-- ===== PLAYBOOK ===== -->
+<section id="playbook">
+  <div class="container">
+    <div class="section-label">The Playbook</div>
+    <h2 class="section-heading">Sovereign Vibe Coding Playbook</h2>
+    <p class="section-subheading">The exact infrastructure-as-code stack we deploy for every client. Open, auditable, reproducible from zero.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3 style="color:var(--accent-cyan);margin-bottom:var(--space-4);">Terraform + .tfvars</h3>
+        <p style="color:var(--text-secondary);font-size:0.875rem;">
+          Every deployment is a single <code style="color:var(--accent-emerald);">terraform apply</code>. Infrastructure defined in HCL with per-client <code style="color:var(--accent-emerald);">.tfvars</code> files. State stored in private GCS bucket. Zero click-ops.
+        </p>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--accent-cyan);margin-bottom:var(--space-4);">Cloudflare Zero Trust</h3>
+        <p style="color:var(--text-secondary);font-size:0.875rem;">
+          Orange Cloud DNS on every record. Cloudflare Access with Google SSO gates every dashboard before traffic reaches the backend container. WAF rules block common attack patterns.
+        </p>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--accent-cyan);margin-bottom:var(--space-4);">Cloud Run Scale-to-Zero</h3>
+        <p style="color:var(--text-secondary);font-size:0.875rem;">
+          <code style="color:var(--accent-emerald);">min_instance_count = 0</code> eliminates idle costs. <code style="color:var(--accent-emerald);">max_instance_count</code> caps prevent denial-of-wallet. Services wake on first request with sub-second cold starts.
+        </p>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--accent-cyan);margin-bottom:var(--space-4);">DuckDB Local Analytics</h3>
+        <p style="color:var(--text-secondary);font-size:0.875rem;">
+          Embedded analytical SQL engine for on-premise deployments. Zero-config, zero-server. Queries run directly on Parquet/CSV/JSON files on the NAS filesystem. BigQuery for cloud-scale; DuckDB for sovereignty.
+        </p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:var(--space-12);">
+      <a href="/playbook/" class="btn btn-secondary">Read the Full Playbook →</a>
+    </div>
+  </div>
+</section>
 
-    const btn = document.getElementById('runActionBtn');
-    const terminal = document.getElementById('terminalSteps');
-    const badge = document.getElementById('agentBadge');
-    const statusMeta = document.getElementById('agentStatusMeta');
-    const artHeader = document.getElementById('artifactHeader');
-    const artContent = document.getElementById('artifactContent');
+<!-- ===== COMMERCIAL CTA ===== -->
+<section class="cta-section" id="contact">
+  <div class="glow-cyan" style="top:0;left:50%;transform:translateX(-50%);"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <h2>Deploy Sovereign AI for Your Organisation</h2>
+    <p>
+      Whether you need a multi-entity finance warehouse, sovereign meeting intelligence, or a complete autonomous operations stack — let's talk about running AI on your terms.
+    </p>
+    <a href="mailto:stuart@testlane.ai" class="btn btn-primary" style="font-size:1.125rem;padding:1.25rem 2.5rem;">
+      Start a Conversation →
+    </a>
+    <p style="margin-top:var(--space-6);font-size:0.875rem;color:var(--text-muted);">
+      Testlane Ltd, Company No 16609167 — Registered in England and Wales
+    </p>
+  </div>
+</section>
 
-    const s = scenarios[currentDomain][selectedScenarioIdx];
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Testlane<span style="color:var(--accent-cyan);">.ai</span></h4>
+        <p style="margin-top:var(--space-2);">Sovereign AI & Autonomous Operations.<br>High-trust, privacy-first infrastructure for regulated enterprises.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <a href="/">Home</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#playbook">Playbook</a>
+        <a href="#architecture">Architecture</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:stuart@testlane.ai">stuart@testlane.ai</a>
+        <p style="color:var(--text-muted);margin-top:var(--space-2);">Testlane Ltd<br>Company No 16609167</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:var(--space-8);padding-top:var(--space-6);border-top:1px solid var(--border-card);color:var(--text-muted);font-size:0.75rem;">
+      &copy; 2026 Testlane Ltd. All rights reserved.
+    </div>
+  </div>
+</footer>
 
-    btn.disabled = true;
-    btn.classList.add('opacity-50', 'cursor-not-allowed');
-
-    badge.innerText = 'EXECUTING';
-    badge.className = 'px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-brand-500/20 text-brand-400 border border-brand-500/30 animate-pulse';
-    statusMeta.innerText = 'Status: Dispatched autonomous Hermes sub-procedure...';
-    terminal.innerHTML = '';
-
-    let stepIdx = 0;
-    const interval = setInterval(() => {
-        if (stepIdx < s.steps.length) {
-            const line = document.createElement('div');
-            line.className = 'text-slate-300';
-            line.innerHTML = `<span class="text-brand-400">[$]</span> ${s.steps[stepIdx]}`;
-            terminal.appendChild(line);
-            terminal.scrollTop = terminal.scrollHeight;
-            stepIdx++;
-        } else {
-            clearInterval(interval);
-            // Completed
-            badge.innerText = s.badge;
-            badge.className = `px-2.5 py-1 rounded-full text-xs font-mono font-medium ${s.badgeClass}`;
-            statusMeta.innerText = 'Status: Completed & verified on local NAS';
-            artHeader.innerText = s.header;
-            artHeader.className = 'text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold mb-1';
-            artContent.innerHTML = s.content;
-
-            btn.disabled = false;
-            btn.classList.remove('opacity-50', 'cursor-not-allowed');
-            isExecuting = false;
-        }
-    }, 450);
-}
-
-// Initialise
-document.addEventListener('DOMContentLoaded', () => {
-    renderScenarios();
-    selectScenario(0);
-});
-</script>
-{% endblock %}
+</body>
+</html>

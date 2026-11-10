@@ -1,0 +1,17 @@
+# ==============================================================================
+# terraform.tfvars.example — Testlane.ai Sovereign AI
+# Copy to terraform.tfvars and fill in real values. Never commit terraform.tfvars.
+# ==============================================================================
+
+project_id        = "testlane-sovereign-prod"
+region            = "europe-west2"
+cloudflare_zone_id = "your-cloudflare-zone-id-here"
+max_instance_count = 5
+
+# Optional: per-client deployments
+# client_deployments = {
+#   "msp-group" = {
+#     subdomain      = "dash"
+#     allowed_emails = "admin@client.com"
+#   }
+# }

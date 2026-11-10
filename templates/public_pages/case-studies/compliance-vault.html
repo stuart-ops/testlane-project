@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sovereign Property & Compliance Vault — Case Study | Testlane.ai</title>
+  <link rel="stylesheet" href="{% static 'css/design-system.css' %}">
+</head>
+<body>
+
+<header class="container">
+  <nav class="nav">
+    <a href="/" class="nav-logo">Testlane<span>.ai</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('nav-links-open');">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="/#case-studies">← Back to Case Studies</a>
+    </div>
+  </nav>
+</header>
+
+<section style="padding-top:var(--space-12);padding-bottom:var(--space-12);">
+  <div class="container" style="max-width:52rem;">
+    <div class="section-label">Case Study 04</div>
+    <h1 style="font-size:clamp(2rem,4vw,3rem);margin-bottom:var(--space-4);">Sovereign Property & Compliance Vault</h1>
+
+    <div class="pill" style="margin-bottom:var(--space-8);">
+      <span class="pill-dot"></span>
+      Statutory Compliance Tracking & Audit-Ready Document Management
+    </div>
+
+    <div class="card" style="margin-bottom:var(--space-8);">
+      <h3>Problem</h3>
+      <p style="color:var(--text-secondary);margin-top:var(--space-3);">Property compliance involves dozens of deadline-driven documents across multiple properties: gas safety certificates, EICR electrical reports, EPC ratings, insurance renewals, tenancy deposit protections. Missing a single renewal triggers statutory penalties (£3,000+ for gas safety, £5,000+ for deposit protection breaches). Manual tracking across spreadsheets and email folders is fragile and error-prone.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:var(--space-8);">
+      <h3>Sovereign Solution</h3>
+      <div class="table-responsive"><table class="tech-table" style="margin-top:var(--space-4);">
+        <thead><tr><th>Layer</th><th>Implementation</th></tr></thead>
+        <tbody>
+          <tr><td class="highlight">Email Ingestion</td><td>Hermes Agent scans Gmail inbox for compliance documents: certificates, reports, council correspondence, tenancy agreements.</td></tr>
+          <tr><td class="highlight">OCR Pipeline</td><td>PDF attachments processed through local OCR (Tesseract) extracting: document type, property address, issue date, expiry date, issuing body.</td></tr>
+          <tr><td class="highlight">Deadline Radar</td><td>DuckDB local database tracking compliance events with approaching deadline detection. Daily cron check.</td></tr>
+          <tr><td class="highlight">Auto-Filing</td><td>Incoming documents auto-sorted into structured filesystem. Syncthing mirrors to phone for on-site access.</td></tr>
+          <tr><td class="highlight">Alerting</td><td>Telegram notification at 30, 14, and 3 days before each deadline. Escalation if unacknowledged.</td></tr>
+          <tr><td class="highlight">Storage</td><td>All documents on local NAS filesystem. Zero cloud document storage.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="stat-grid" style="margin-bottom:var(--space-8);">
+      <div class="stat-card">
+        <div class="stat-value">£0</div>
+        <div class="stat-label">Statutory Penalties (Zero Missed Deadlines)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">Local Document Storage</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">30/14/3</div>
+        <div class="stat-label">Day Alert Escalation Windows</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Outcome</h3>
+      <p style="color:var(--text-secondary);margin-top:var(--space-3);">Complete compliance oversight with zero missed deadlines. Documents auto-filed and accessible on-site via phone. Telegram alerts provide peace of mind without requiring constant manual calendar checking. All sensitive property and tenant documents remain on local hardware — never in a cloud document store.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container" style="text-align:center;">
+    <p><a href="/">← Back to Testlane.ai</a></p>
+    <p style="margin-top:var(--space-2);">&copy; 2026 Testlane Ltd.</p>
+  </div>
+</footer>
+
+</body>
+</html>

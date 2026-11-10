@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sovereign Whisper — Case Study | Testlane.ai</title>
+  <link rel="stylesheet" href="{% static 'css/design-system.css' %}">
+</head>
+<body>
+
+<header class="container">
+  <nav class="nav">
+    <a href="/" class="nav-logo">Testlane<span>.ai</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('nav-links-open');">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="/#case-studies">← Back to Case Studies</a>
+    </div>
+  </nav>
+</header>
+
+<section style="padding-top:var(--space-12);padding-bottom:var(--space-12);">
+  <div class="container" style="max-width:52rem;">
+    <div class="section-label">Case Study 03</div>
+    <h1 style="font-size:clamp(2rem,4vw,3rem);margin-bottom:var(--space-4);">Sovereign Whisper — On-Premise Boardroom Intelligence</h1>
+
+    <div class="pill" style="margin-bottom:var(--space-8);">
+      <span class="pill-dot"></span>
+      100% On-Premise Meeting Transcription & Minutes
+    </div>
+
+    <div class="card" style="margin-bottom:var(--space-8);">
+      <h3>Problem</h3>
+      <p style="color:var(--text-secondary);margin-top:var(--space-3);">Enterprise boardrooms and legal proceedings generate sensitive audio that cannot be sent to cloud transcription services. Regulatory and litigation privilege requires complete audio isolation. Existing solutions (cloud-based transcription, human transcription services) all involve audio leaving the building.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:var(--space-8);">
+      <h3>Sovereign Solution</h3>
+      <div class="table-responsive"><table class="tech-table" style="margin-top:var(--space-4);">
+        <thead><tr><th>Layer</th><th>Implementation</th></tr></thead>
+        <tbody>
+          <tr><td class="highlight">Capture</td><td>Voice memos recorded on company iPhones. Syncthing synchronises audio directly to NAS — no iCloud, Google Drive, or Dropbox intermediary.</td></tr>
+          <tr><td class="highlight">Transcription</td><td>Local Whisper model (faster-whisper) running on NAS Docker container. GPU-accelerated if available. Zero audio bytes leave the network.</td></tr>
+          <tr><td class="highlight">Minutes</td><td>Hermes Agent processes transcript into structured executive minutes using local LLM inference or dedicated API key.</td></tr>
+          <tr><td class="highlight">Action Items</td><td>Structured JSON output pushed to Obsidian Kanban via local filesystem. No Asana/Jira/Notion dependency.</td></tr>
+          <tr><td class="highlight">Delivery</td><td>Minutes PDF generated locally via ReportLab, emailed via client's own Gmail API.</td></tr>
+          <tr><td class="highlight">Perimeter</td><td>Tailscale WireGuard mesh. NAS behind corporate firewall. No open inbound ports.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="arch-diagram" style="margin:var(--space-8) 0;">
+      <div class="arch-node">
+        <div class="arch-node-label">iPhone</div>
+        <div class="arch-node-desc">Voice Memos</div>
+      </div>
+      <span class="arch-arrow">→</span>
+      <div class="arch-node">
+        <div class="arch-node-label">Syncthing</div>
+        <div class="arch-node-desc">P2P Sync</div>
+      </div>
+      <span class="arch-arrow">→</span>
+      <div class="arch-node">
+        <div class="arch-node-label">NAS Docker</div>
+        <div class="arch-node-desc">Whisper · Hermes</div>
+      </div>
+      <span class="arch-arrow">→</span>
+      <div class="arch-node">
+        <div class="arch-node-label">PDF + Kanban</div>
+        <div class="arch-node-desc">Minutes · Actions</div>
+      </div>
+    </div>
+
+    <div class="stat-grid" style="margin-bottom:var(--space-8);">
+      <div class="stat-card">
+        <div class="stat-value">0</div>
+        <div class="stat-label">Audio Bytes Leaving the Network</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">&lt;15 min</div>
+        <div class="stat-label">Minutes Delivered After Meeting End</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">On-Premise Processing</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Key Differentiator</h3>
+      <p style="color:var(--text-secondary);margin-top:var(--space-3);">Unlike cloud transcription services where audio transits third-party infrastructure, Sovereign Whisper keeps all audio processing on the client's own hardware. This is the only approach that satisfies legal privilege requirements for boardroom and litigation recordings.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container" style="text-align:center;">
+    <p><a href="/">← Back to Testlane.ai</a></p>
+    <p style="margin-top:var(--space-2);">&copy; 2026 Testlane Ltd.</p>
+  </div>
+</footer>
+
+</body>
+</html>

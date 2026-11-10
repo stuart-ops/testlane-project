@@ -1,22 +1,11 @@
 #!/bin/bash
-# Build script for Render deployment
+# Build script for Testlane.ai Sovereign AI deployment
+set -e
 
-echo "🚀 Starting Render build..."
-
-# Install dependencies
-echo "📦 Installing dependencies..."
+echo "Installing dependencies..."
 pip install -r requirements.txt
 
-# Run database migrations
-echo "🗄️  Running database migrations..."
-python manage.py migrate --noinput
-
-# Populate questions (only if database is empty)
-echo "📝 Populating initial data..."
-python manage.py populate_questions
-
-# Collect static files
-echo "📁 Collecting static files..."
+echo "Collecting static files..."
 python manage.py collectstatic --noinput --clear
 
-echo "✅ Build complete!"
+echo "Build complete."

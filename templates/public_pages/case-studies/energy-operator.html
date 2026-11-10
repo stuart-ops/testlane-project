@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upstream Energy Producer — Case Study | Testlane.ai</title>
+  <link rel="stylesheet" href="{% static 'css/design-system.css' %}">
+</head>
+<body>
+
+<header class="container">
+  <nav class="nav">
+    <a href="/" class="nav-logo">Testlane<span>.ai</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('nav-links-open');">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="/#case-studies">← Back to Case Studies</a>
+    </div>
+  </nav>
+</header>
+
+<section style="padding-top:var(--space-12);padding-bottom:var(--space-12);">
+  <div class="container" style="max-width:52rem;">
+    <div class="section-label">Case Study 02</div>
+    <h1 style="font-size:clamp(2rem,4vw,3rem);margin-bottom:var(--space-4);">LSE-Listed Upstream Energy Producer — Dynamic Strip DCF Valuation Engine</h1>
+
+    <div class="pill" style="margin-bottom:var(--space-8);">
+      <span class="pill-dot pill-dot-cyan"></span>
+      North Sea Operating Assets — Commodity Valuation
+    </div>
+
+    <div class="card" style="margin-bottom:var(--space-8);">
+      <h3>Problem</h3>
+      <p style="color:var(--text-secondary);margin-top:var(--space-3);">The v2 monthly workbook model required manual curve updates from ICE and EIA sources. Repricing the DCF for board presentations took hours of data entry and cross-checking. Sensitive production and reserve data could not be exposed to third-party analytics platforms.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:var(--space-8);">
+      <h3>Sovereign Solution</h3>
+      <div class="table-responsive"><table class="tech-table" style="margin-top:var(--space-4);">
+        <thead><tr><th>Layer</th><th>Implementation</th></tr></thead>
+        <tbody>
+          <tr><td class="highlight">Brent Strip</td><td>Yahoo Finance chart endpoint (BZ=F futures contract chain). Nightly Cloud Run job pulls and validates.</td></tr>
+          <tr><td class="highlight">NBP Gas Strip</td><td>Databento API — ICE UK NBP futures. Usage-priced at ~$0.04/pull, capped at $0.50/night.</td></tr>
+          <tr><td class="highlight">Spot Benchmarks</td><td>EIA Open Data API for public government energy data.</td></tr>
+          <tr><td class="highlight">Engine</td><td>Pure Python monthly model: production, hedges, three tax pools (RFCT 30%, SCT 10%, EPL 38%), balance sheet, dividends, DCF. Full run in milliseconds.</td></tr>
+          <tr><td class="highlight">Validation</td><td>Failed/implausible pulls load nothing. Dashboard keeps last good curve. Flags stale after 4 days.</td></tr>
+          <tr><td class="highlight">Storage</td><td>BigQuery curves, prices, and latest curve views in dedicated analytical dataset.</td></tr>
+          <tr><td class="highlight">Dashboard</td><td>FastAPI single HTML page with interactive sensitivity levers: curve shift, price floors, payout ratio, discount rate, drilling toggle.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="stat-grid" style="margin-bottom:var(--space-8);">
+      <div class="stat-card">
+        <div class="stat-value">ms</div>
+        <div class="stat-label">Full DCF Model Execution Time</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">~$1/mo</div>
+        <div class="stat-label">Databento NBP Strip Cost</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">Nightly</div>
+        <div class="stat-label">Automated Curve Repricing</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">3</div>
+        <div class="stat-label">Tax Pools Modelled (RFCT, SCT, EPL)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Outcome</h3>
+      <p style="color:var(--text-secondary);margin-top:var(--space-3);">Nightly automated repricing replaced hours of manual curve updates. Board-ready dashboard with interactive sensitivity levers enables real-time scenario analysis. All modelling stays in-container — no proprietary data sent to external services.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container" style="text-align:center;">
+    <p><a href="/">← Back to Testlane.ai</a></p>
+    <p style="margin-top:var(--space-2);">&copy; 2026 Testlane Ltd.</p>
+  </div>
+</footer>
+
+</body>
+</html>

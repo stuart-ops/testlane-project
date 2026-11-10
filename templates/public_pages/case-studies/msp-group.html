@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transatlantic MSP Group — Case Study | Testlane.ai</title>
+  <link rel="stylesheet" href="{% static 'css/design-system.css' %}">
+</head>
+<body>
+
+<header class="container">
+  <nav class="nav">
+    <a href="/" class="nav-logo">Testlane<span>.ai</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('nav-links-open');">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="/#case-studies">← Back to Case Studies</a>
+    </div>
+  </nav>
+</header>
+
+<section style="padding-top:var(--space-12);padding-bottom:var(--space-12);">
+  <div class="container" style="max-width:52rem;">
+    <div class="section-label">Case Study 01</div>
+    <h1 style="font-size:clamp(2rem,4vw,3rem);margin-bottom:var(--space-4);">Transatlantic MSP Group — Multi-Entity QBO → BigQuery Warehouse</h1>
+
+    <div class="pill" style="margin-bottom:var(--space-8);">
+      <span class="pill-dot"></span>
+      Global Managed Service Provider — $16M ARR — Transatlantic Group
+    </div>
+
+    <div class="card" style="margin-bottom:var(--space-8);">
+      <h3>Client Profile</h3>
+      <p style="color:var(--text-secondary);margin-top:var(--space-3);">Global Managed Service Provider with entities across three jurisdictions: US Parent LLC, UK Limited Company, UAE Free Zone Company. Multi-currency operations spanning five currencies with monthly group consolidation requirements.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:var(--space-8);">
+      <h3>Problem</h3>
+      <p style="color:var(--text-secondary);margin-top:var(--space-3);">Four entities posting to separate QuickBooks Online instances. Monthly group consolidation required 5–7 days of manual spreadsheet work. Management pack preparation was labour-intensive and error-prone. No unified view of group financial position.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:var(--space-8);">
+      <h3>Sovereign Solution</h3>
+      <div class="table-responsive"><table class="tech-table" style="margin-top:var(--space-4);">
+        <thead><tr><th>Layer</th><th>Implementation</th></tr></thead>
+        <tbody>
+          <tr><td class="highlight">Ingestion</td><td>Nightly Cloud Run job pulls GL, invoices, expenses from all four QBO realms via OAuth 2.0. Credentials in Google Secret Manager.</td></tr>
+          <tr><td class="highlight">Warehouse</td><td>BigQuery datasets: raw extract and reconciled reporting marts (PL summary, consolidated PL, customer margin, trial balance).</td></tr>
+          <tr><td class="highlight">Normalisation</td><td>603 adjustment lines across entities. Five accounting bases tracked: QBO posted, normalised, proforma, pack normalised, workbook posted.</td></tr>
+          <tr><td class="highlight">Consolidation</td><td>Live intercompany elimination engine. Residuals flagged to intercompany unreconciled account.</td></tr>
+          <tr><td class="highlight">Dashboard</td><td>Flask app behind Cloudflare Access OTP with role-based views and permission boundaries.</td></tr>
+          <tr><td class="highlight">Perimeter</td><td>Cloud Run internal ingress, Cloud NAT fixed egress IP. Zero public internet exposure.</td></tr>
+          <tr><td class="highlight">Review Loop</td><td>Thumbs up/down on every P&amp;L figure with reviewer identity tracking. Nightly sync re-checks open items.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="stat-grid" style="margin-bottom:var(--space-8);">
+      <div class="stat-card">
+        <div class="stat-value">5→0</div>
+        <div class="stat-label">Days of Manual Consolidation Eliminated</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">308/308</div>
+        <div class="stat-label">Pack Tie-Out Checks Verified to the Cent</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">4</div>
+        <div class="stat-label">Entities Across 3 Jurisdictions</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">Audit Trail for Every Adjustment</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Outcome</h3>
+      <p style="color:var(--text-secondary);margin-top:var(--space-3);">Monthly consolidation reduced from 5–7 days to fully automated nightly sync. Client leadership views the same live screen with role-based permission boundaries. Strategic oversight billed at consultancy rates — not manual spreadsheet work.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container" style="text-align:center;">
+    <p><a href="/">← Back to Testlane.ai</a></p>
+    <p style="margin-top:var(--space-2);">&copy; 2026 Testlane Ltd.</p>
+  </div>
+</footer>
+
+</body>
+</html>

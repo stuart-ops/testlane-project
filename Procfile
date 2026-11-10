@@ -1,2 +1,1 @@
-web: gunicorn semilattice_project.wsgi --log-file -
-worker: celery -A semilattice_project worker --loglevel=info
+web: gunicorn semilattice_project.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 120

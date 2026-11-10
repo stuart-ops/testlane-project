@@ -141,3 +141,7 @@ staticfiles/
 
 # Railway
 railway.json
+
+# Local backups & secrets
+backup_semilattice_db.sql
+render_*.json

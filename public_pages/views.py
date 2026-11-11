@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 def landing_page(request):
@@ -7,8 +7,8 @@ def landing_page(request):
 
 
 def case_study_msp_group(request):
-    """Case Study: Transatlantic MSP Group — Multi-Entity QBO → BigQuery."""
-    return render(request, 'public_pages/case-studies/msp-group.html')
+    """Case Study: Transatlantic MSP Group — Multi-Entity QBO → BigQuery (Hidden temporarily)."""
+    return redirect('/')
 
 
 def case_study_energy_operator(request):

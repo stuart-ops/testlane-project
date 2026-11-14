@@ -1,268 +1,102 @@
-{% load static %}
-<!DOCTYPE html>
+{% load static %}<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Testlane.ai — Sovereign AI & Autonomous Operations. High-trust, privacy-first AI that runs on your infrastructure, not ours.">
-  <title>Testlane.ai — Sovereign AI & Autonomous Operations</title>
+  <meta name="description" content="We put AI into everyday business processes to cut real costs and find new opportunities, using the best model for each job.">
+  <title>Testlane: AI built into your business processes</title>
   <link rel="stylesheet" href="{% static 'css/design-system.css' %}">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2300f0ff'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='18' fill='%230a0a0c'>T</text></svg>">
 </head>
 <body>
-
-<!-- ===== NAVIGATION ===== -->
-<header class="container">
-  <nav class="nav">
-    <a href="/" class="nav-logo">Testlane<span>.ai</span></a>
-        <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('nav-links-open');">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links">
-      <a href="#case-studies">Case Studies</a>
-      <a href="#playbook">Playbook</a>
-      <a href="#architecture">Architecture</a>
-      <a href="#contact" class="btn btn-ghost" style="padding:0.5rem 1rem;">Contact</a>
-    </div>
-  </nav>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav-logo">Testlane</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('nav-links-open');"><span></span><span></span><span></span></button>
+      <div class="nav-links">
+        <a href="/#what-we-do">What we do</a>
+        <a href="/#work">Our work</a>
+        <a href="/how-we-build/">How we build</a>
+        <a href="/about/">About</a>
+        <a href="mailto:stuart@testlane.ai">Contact</a>
+      </div>
+    </nav>
+  </div>
 </header>
 
-<!-- ===== HERO ===== -->
 <section class="hero">
-  <div class="glow-cyan" style="top:-10%;left:-10%;"></div>
-  <div class="glow-emerald" style="bottom:-5%;right:-5%;"></div>
   <div class="container">
-    <div class="hero-content">
-      <div class="pill" style="margin-bottom:var(--space-4);">
-        <span class="pill-dot pill-dot-cyan"></span>
-        Sovereign AI Operations — Now Live
-      </div>
-      <h1>Sovereign AI That Runs on Your Infrastructure</h1>
-      <p>
-        High-trust, privacy-first autonomous operations for regulated enterprises.
-        Zero public cloud training data leakage. Zero SaaS sprawl.
-        Your data never leaves your perimeter.
-      </p>
-      <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary">Deploy Sovereign AI →</a>
-        <a href="#case-studies" class="btn btn-secondary">See Case Studies</a>
-      </div>
+    <h1>AI built into the way your business actually runs.</h1>
+    <p class="lead">We put AI into everyday business processes to cut real costs and uncover new opportunities. We are not tied to any one AI. We use the best model for each job, and we keep your data in your hands.</p>
+    <div class="hero-cta">
+      <a href="mailto:stuart@testlane.ai" class="btn btn-primary">Talk to us</a>
+      <a href="#work" class="btn btn-secondary">See our work</a>
     </div>
   </div>
 </section>
 
-<!-- ===== THREE PILLARS ===== -->
-<section id="pillars">
+<section id="what-we-do" class="alt">
   <div class="container">
-    <div class="section-label">The Three Pillars</div>
-    <h2 class="section-heading">Autonomous Operations, Sovereign Infrastructure</h2>
-    <p class="section-subheading">Three integrated capabilities that transform how regulated enterprises run AI — all on your hardware, behind your firewall.</p>
-    <div class="grid-3">
-      <div class="card animate-in">
-        <div style="font-size:2rem;margin-bottom:var(--space-4);">📊</div>
-        <h3>Autonomous Finance Operations</h3>
-        <p style="color:var(--text-secondary);margin-top:var(--space-3);">
-          Multi-entity ledger sync, automated intercompany reconciliation, live executive dashboards, and AI-driven variance analysis — running on scheduled Cloud Run jobs with zero human touch. Fractional FD as code.
-        </p>
+    <h2>What we do</h2>
+    <div class="rows">
+      <div class="row">
+        <h3>Recover money you are owed</h3>
+        <p>Checking every invoice, spotting overcharges and failures, and claiming back inside the time limits. The work most businesses never get round to.</p>
       </div>
-      <div class="card animate-in" style="animation-delay:0.1s;">
-        <div style="font-size:2rem;margin-bottom:var(--space-4);">🎙️</div>
-        <h3>Sovereign Voice & Meeting Intelligence</h3>
-        <p style="color:var(--text-secondary);margin-top:var(--space-3);">
-          100% on-premise boardroom and transit voice transcription. Executive minutes generation and action-item extraction — audio never leaves the client's network. Local Whisper model on dedicated hardware.
-        </p>
+      <div class="row">
+        <h3>Take the manual work out of finance and admin</h3>
+        <p>Reporting, reconciliation, filing and deadline tracking that run themselves and stay up to date as your systems and processes change.</p>
       </div>
-      <div class="card animate-in" style="animation-delay:0.2s;">
-        <div style="font-size:2rem;margin-bottom:var(--space-4);">🔐</div>
-        <h3>Compliance & Document Vault</h3>
-        <p style="color:var(--text-secondary);margin-top:var(--space-3);">
-          Statutory compliance tracking, auto-filing from email and OCR, audit-ready document management, and deadline radar — all indexed locally with DuckDB, never in a cloud document store.
-        </p>
+      <div class="row">
+        <h3>Find the next opportunity</h3>
+        <p>When all your data sits in one place and AI is reading it every day, patterns show up that no one had time to look for: where the cost really sits, and what to change.</p>
       </div>
     </div>
+    <p style="margin-top:1.75rem"><a href="/how-we-build/" style="font-weight:600">How we build it: the Hermes method</a></p>
   </div>
 </section>
 
-<!-- ===== CASE STUDIES ===== -->
-<section id="case-studies">
+<section id="work">
   <div class="container">
-    <div class="section-label">Anonymised Case Studies</div>
-    <h2 class="section-heading">Proven in Production</h2>
-    <p class="section-subheading">Real-world deployments demonstrating sovereign AI operations across energy, voice intelligence, and compliance. All client identities strictly anonymised.</p>
-    <div class="grid-3" style="margin-top:var(--space-8);">
-      <!-- Hidden temporarily: QBO / Multi-Entity MSP Case Study
-      <a href="/case-studies/msp-group/" class="case-study-card">
-        <div class="pill" style="margin-bottom:var(--space-4);">
-          <span class="pill-dot"></span>
-          Multi-Entity Finance
-        </div>
-        <h3>Transatlantic MSP Group — $16M ARR</h3>
-        <p>Four-entity QBO consolidation across three jurisdictions (US, UK, UAE). Nightly automated sync replaced 5–7 days of manual spreadsheet work per month. 308/308 pack tie-out checks verified to the cent.</p>
-        <p style="margin-top:var(--space-3);color:var(--accent-cyan);font-weight:600;font-size:0.875rem;">Read case study →</p>
-      </a>
-      -->
-      <a href="/case-studies/energy-operator/" class="case-study-card">
-        <div class="pill" style="margin-bottom:var(--space-4);">
-          <span class="pill-dot pill-dot-cyan"></span>
-          Energy Valuation
-        </div>
-        <h3>LSE-Listed Upstream Energy Producer</h3>
-        <p>Dynamic DCF valuation engine repricing off live Brent and NBP gas forward curves. Full model execution in milliseconds — replacing hours of manual spreadsheet updates for board presentations.</p>
-        <p style="margin-top:var(--space-3);color:var(--accent-cyan);font-weight:600;font-size:0.875rem;">Read case study →</p>
-      </a>
-      <a href="/case-studies/sovereign-whisper/" class="case-study-card">
-        <div class="pill" style="margin-bottom:var(--space-4);">
-          <span class="pill-dot"></span>
-          Voice Intelligence
-        </div>
-        <h3>Sovereign Whisper — Boardroom Intelligence</h3>
-        <p>100% on-premise meeting transcription and executive minutes. Local Whisper model on NAS hardware. Audio never transits a public cloud. Minutes delivered within 15 minutes of meeting end.</p>
-        <p style="margin-top:var(--space-3);color:var(--accent-cyan);font-weight:600;font-size:0.875rem;">Read case study →</p>
-      </a>
-      <a href="/case-studies/compliance-vault/" class="case-study-card">
-        <div class="pill" style="margin-bottom:var(--space-4);">
-          <span class="pill-dot"></span>
-          Compliance
-        </div>
-        <h3>Sovereign Property & Compliance Vault</h3>
-        <p>Automated deadline radar across property portfolios: gas safety certificates, EICR electrical reports, EPC ratings, insurance renewals, tenancy deposit protections. OCR ingestion from email, local DuckDB indexing.</p>
-        <p style="margin-top:var(--space-3);color:var(--accent-cyan);font-weight:600;font-size:0.875rem;">Read case study →</p>
-      </a>
+    <h2>Our work</h2>
+    <p>Real projects, with client details removed.</p>
+    <div class="rows">
+      <div class="row">
+        <div><div class="tag">Distribution</div><h3><a class="title" href="/case-studies/freight-recovery/">Service improvement with a national freight carrier</a></h3></div>
+        <div><p>A trade distributor now claims back what its national carrier gets wrong, on time, with AI doing the checking and a person approving the money.</p><a class="more" href="/case-studies/freight-recovery/">Read the case study</a></div>
+      </div>
+      <div class="row">
+        <div><div class="tag">Energy</div><h3><a class="title" href="/case-studies/energy-operator/">A live valuation model for a listed energy producer</a></h3></div>
+        <div><p>A spreadsheet valuation that took hours to refresh became a dashboard that updates itself every night and adapts as the business changes.</p><a class="more" href="/case-studies/energy-operator/">Read the case study</a></div>
+      </div>
+      <div class="row">
+        <div><div class="tag">Governance</div><h3><a class="title" href="/case-studies/board-minutes/">Board minutes without the audio leaving the building</a></h3></div>
+        <div><p>Meetings are transcribed and minuted on the client's own equipment, with a draft ready within fifteen minutes of the meeting ending.</p><a class="more" href="/case-studies/board-minutes/">Read the case study</a></div>
+      </div>
+      <div class="row">
+        <div><div class="tag">Property</div><h3><a class="title" href="/case-studies/compliance-vault/">Never missing a certificate renewal</a></h3></div>
+        <div><p>Compliance documents arrive by email, get read, filed and tracked, and the right person is warned well before anything expires.</p><a class="more" href="/case-studies/compliance-vault/">Read the case study</a></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== LIVE ARCHITECTURE ===== -->
-<section id="architecture" style="background:linear-gradient(180deg, var(--bg-primary), rgba(18,18,22,0.5), var(--bg-primary));">
-  <div class="container">
-    <div class="section-label">Infrastructure</div>
-    <h2 class="section-heading">Sovereign AI Architecture</h2>
-    <p class="section-subheading">Every Testlane deployment follows the same battle-tested blueprint. Terraform-defined, Cloudflare-gated, scale-to-zero economics.</p>
-
-    <div class="arch-diagram">
-      <div class="arch-node">
-        <div class="arch-node-label">Cloudflare</div>
-        <div class="arch-node-desc">WAF · Zero Trust · DDoS</div>
-      </div>
-      <span class="arch-arrow">→</span>
-      <div class="arch-node">
-        <div class="arch-node-label">Cloud Run</div>
-        <div class="arch-node-desc">Scale-to-Zero · VPC Egress</div>
-      </div>
-      <span class="arch-arrow">→</span>
-      <div class="arch-node">
-        <div class="arch-node-label">BigQuery</div>
-        <div class="arch-node-desc">Isolated Dataset · SQL</div>
-      </div>
-      <span class="arch-arrow">↔</span>
-      <div class="arch-node">
-        <div class="arch-node-label">NAS / On-Prem</div>
-        <div class="arch-node-desc">Whisper · DuckDB · Hermes</div>
-      </div>
-    </div>
-
-    <div class="code-block" style="max-width:52rem;margin:var(--space-8) auto 0;">
-      <code>
-<span class="code-keyword">resource</span> <span class="code-string">"google_cloud_run_v2_service"</span> <span class="code-string">"dashboard"</span> {
-  <span class="code-keyword">name</span>     = <span class="code-string">"client-dash"</span>
-  <span class="code-keyword">ingress</span>  = <span class="code-string">"INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER"</span>
-
-  <span class="code-keyword">template</span> {
-    <span class="code-keyword">scaling</span> {
-      <span class="code-keyword">min_instance_count</span> = <span class="code-string">0</span>   <span class="code-comment"># Scale-to-zero: zero idle cost</span>
-      <span class="code-keyword">max_instance_count</span> = <span class="code-string">5</span>   <span class="code-comment"># Denial-of-wallet cap</span>
-    }
-    <span class="code-keyword">containers</span> {
-      <span class="code-keyword">image</span> = <span class="code-string">"gcr.io/project/client-dash:latest"</span>
-    }
-  }
-}
-      </code>
-    </div>
+<section class="alt" id="contact">
+  <div class="container narrow">
+    <h2>Got a process that quietly costs you money?</h2>
+    <p>Tell us what is slow, manual or easy to get wrong. We will say plainly whether AI can help, what it would cost, and whether it is worth doing.</p>
+    <p style="margin-top:1.5rem"><a href="mailto:stuart@testlane.ai" class="btn btn-primary">Email stuart@testlane.ai</a></p>
   </div>
 </section>
 
-<!-- ===== PLAYBOOK ===== -->
-<section id="playbook">
-  <div class="container">
-    <div class="section-label">The Playbook</div>
-    <h2 class="section-heading">Sovereign Vibe Coding Playbook</h2>
-    <p class="section-subheading">The exact infrastructure-as-code stack we deploy for every client. Open, auditable, reproducible from zero.</p>
-    <div class="grid-2">
-      <div class="card">
-        <h3 style="color:var(--accent-cyan);margin-bottom:var(--space-4);">Terraform + .tfvars</h3>
-        <p style="color:var(--text-secondary);font-size:0.875rem;">
-          Every deployment is a single <code style="color:var(--accent-emerald);">terraform apply</code>. Infrastructure defined in HCL with per-client <code style="color:var(--accent-emerald);">.tfvars</code> files. State stored in private GCS bucket. Zero click-ops.
-        </p>
-      </div>
-      <div class="card">
-        <h3 style="color:var(--accent-cyan);margin-bottom:var(--space-4);">Cloudflare Zero Trust</h3>
-        <p style="color:var(--text-secondary);font-size:0.875rem;">
-          Orange Cloud DNS on every record. Cloudflare Access with Google SSO gates every dashboard before traffic reaches the backend container. WAF rules block common attack patterns.
-        </p>
-      </div>
-      <div class="card">
-        <h3 style="color:var(--accent-cyan);margin-bottom:var(--space-4);">Cloud Run Scale-to-Zero</h3>
-        <p style="color:var(--text-secondary);font-size:0.875rem;">
-          <code style="color:var(--accent-emerald);">min_instance_count = 0</code> eliminates idle costs. <code style="color:var(--accent-emerald);">max_instance_count</code> caps prevent denial-of-wallet. Services wake on first request with sub-second cold starts.
-        </p>
-      </div>
-      <div class="card">
-        <h3 style="color:var(--accent-cyan);margin-bottom:var(--space-4);">DuckDB Local Analytics</h3>
-        <p style="color:var(--text-secondary);font-size:0.875rem;">
-          Embedded analytical SQL engine for on-premise deployments. Zero-config, zero-server. Queries run directly on Parquet/CSV/JSON files on the NAS filesystem. BigQuery for cloud-scale; DuckDB for sovereignty.
-        </p>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:var(--space-12);">
-      <a href="/playbook/" class="btn btn-secondary">Read the Full Playbook →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== COMMERCIAL CTA ===== -->
-<section class="cta-section" id="contact">
-  <div class="glow-cyan" style="top:0;left:50%;transform:translateX(-50%);"></div>
-  <div class="container" style="position:relative;z-index:2;">
-    <h2>Deploy Sovereign AI for Your Organisation</h2>
-    <p>
-      Whether you need a multi-entity finance warehouse, sovereign meeting intelligence, or a complete autonomous operations stack — let's talk about running AI on your terms.
-    </p>
-    <a href="mailto:stuart@testlane.ai" class="btn btn-primary" style="font-size:1.125rem;padding:1.25rem 2.5rem;">
-      Start a Conversation →
-    </a>
-    <p style="margin-top:var(--space-6);font-size:0.875rem;color:var(--text-muted);">
-      Testlane Ltd, Company No 16609167 — Registered in England and Wales
-    </p>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h4>Testlane<span style="color:var(--accent-cyan);">.ai</span></h4>
-        <p style="margin-top:var(--space-2);">Sovereign AI & Autonomous Operations.<br>High-trust, privacy-first infrastructure for regulated enterprises.</p>
-      </div>
-      <div>
-        <h4>Pages</h4>
-        <a href="/">Home</a>
-        <a href="#case-studies">Case Studies</a>
-        <a href="#playbook">Playbook</a>
-        <a href="#architecture">Architecture</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <a href="mailto:stuart@testlane.ai">stuart@testlane.ai</a>
-        <p style="color:var(--text-muted);margin-top:var(--space-2);">Testlane Ltd<br>Company No 16609167</p>
-      </div>
+    <div class="cols">
+      <div>Testlane Ltd. Company No 16609167, registered in England and Wales.</div>
+      <div><a href="mailto:stuart@testlane.ai">stuart@testlane.ai</a></div>
     </div>
-    <div style="text-align:center;margin-top:var(--space-8);padding-top:var(--space-6);border-top:1px solid var(--border-card);color:var(--text-muted);font-size:0.75rem;">
-      &copy; 2026 Testlane Ltd. All rights reserved.
-    </div>
+    <p style="margin-top:1rem">&copy; 2026 Testlane Ltd.</p>
   </div>
 </footer>
-
 </body>
 </html>

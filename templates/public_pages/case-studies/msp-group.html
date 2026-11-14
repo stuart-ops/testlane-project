@@ -1,94 +1,58 @@
-{% load static %}
-<!DOCTYPE html>
+{% load static %}<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transatlantic MSP Group — Case Study | Testlane.ai</title>
+  <meta name="description" content="A managed services group with four entities in three countries now consolidates itself every night.">
+  <title>Group finance on autopilot | Testlane</title>
   <link rel="stylesheet" href="{% static 'css/design-system.css' %}">
 </head>
 <body>
-
-<header class="container">
-  <nav class="nav">
-    <a href="/" class="nav-logo">Testlane<span>.ai</span></a>
-        <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('nav-links-open');">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links">
-      <a href="/#case-studies">← Back to Case Studies</a>
-    </div>
-  </nav>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav-logo">Testlane</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('nav-links-open');"><span></span><span></span><span></span></button>
+      <div class="nav-links">
+        <a href="/#what-we-do">What we do</a>
+        <a href="/#work">Our work</a>
+        <a href="/how-we-build/">How we build</a>
+        <a href="/about/">About</a>
+        <a href="mailto:stuart@testlane.ai">Contact</a>
+      </div>
+    </nav>
+  </div>
 </header>
 
-<section style="padding-top:var(--space-12);padding-bottom:var(--space-12);">
-  <div class="container" style="max-width:52rem;">
-    <div class="section-label">Case Study 01</div>
-    <h1 style="font-size:clamp(2rem,4vw,3rem);margin-bottom:var(--space-4);">Transatlantic MSP Group — Multi-Entity QBO → BigQuery Warehouse</h1>
 
-    <div class="pill" style="margin-bottom:var(--space-8);">
-      <span class="pill-dot"></span>
-      Global Managed Service Provider — $16M ARR — Transatlantic Group
-    </div>
-
-    <div class="card" style="margin-bottom:var(--space-8);">
-      <h3>Client Profile</h3>
-      <p style="color:var(--text-secondary);margin-top:var(--space-3);">Global Managed Service Provider with entities across three jurisdictions: US Parent LLC, UK Limited Company, UAE Free Zone Company. Multi-currency operations spanning five currencies with monthly group consolidation requirements.</p>
-    </div>
-
-    <div class="card" style="margin-bottom:var(--space-8);">
-      <h3>Problem</h3>
-      <p style="color:var(--text-secondary);margin-top:var(--space-3);">Four entities posting to separate QuickBooks Online instances. Monthly group consolidation required 5–7 days of manual spreadsheet work. Management pack preparation was labour-intensive and error-prone. No unified view of group financial position.</p>
-    </div>
-
-    <div class="card" style="margin-bottom:var(--space-8);">
-      <h3>Sovereign Solution</h3>
-      <div class="table-responsive"><table class="tech-table" style="margin-top:var(--space-4);">
-        <thead><tr><th>Layer</th><th>Implementation</th></tr></thead>
-        <tbody>
-          <tr><td class="highlight">Ingestion</td><td>Nightly Cloud Run job pulls GL, invoices, expenses from all four QBO realms via OAuth 2.0. Credentials in Google Secret Manager.</td></tr>
-          <tr><td class="highlight">Warehouse</td><td>BigQuery datasets: raw extract and reconciled reporting marts (PL summary, consolidated PL, customer margin, trial balance).</td></tr>
-          <tr><td class="highlight">Normalisation</td><td>603 adjustment lines across entities. Five accounting bases tracked: QBO posted, normalised, proforma, pack normalised, workbook posted.</td></tr>
-          <tr><td class="highlight">Consolidation</td><td>Live intercompany elimination engine. Residuals flagged to intercompany unreconciled account.</td></tr>
-          <tr><td class="highlight">Dashboard</td><td>Flask app behind Cloudflare Access OTP with role-based views and permission boundaries.</td></tr>
-          <tr><td class="highlight">Perimeter</td><td>Cloud Run internal ingress, Cloud NAT fixed egress IP. Zero public internet exposure.</td></tr>
-          <tr><td class="highlight">Review Loop</td><td>Thumbs up/down on every P&amp;L figure with reviewer identity tracking. Nightly sync re-checks open items.</td></tr>
-        </tbody>
-      </table></div>
-    </div>
-
-    <div class="stat-grid" style="margin-bottom:var(--space-8);">
-      <div class="stat-card">
-        <div class="stat-value">5→0</div>
-        <div class="stat-label">Days of Manual Consolidation Eliminated</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value">308/308</div>
-        <div class="stat-label">Pack Tie-Out Checks Verified to the Cent</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value">4</div>
-        <div class="stat-label">Entities Across 3 Jurisdictions</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value">100%</div>
-        <div class="stat-label">Audit Trail for Every Adjustment</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Outcome</h3>
-      <p style="color:var(--text-secondary);margin-top:var(--space-3);">Monthly consolidation reduced from 5–7 days to fully automated nightly sync. Client leadership views the same live screen with role-based permission boundaries. Strategic oversight billed at consultancy rates — not manual spreadsheet work.</p>
-    </div>
+<section class="study">
+  <div class="container narrow">
+    <a class="back" href="/#work">Back to our work</a>
+    <div class="eyebrow">Finance</div>
+    <h1>Group accounts without the monthly scramble</h1>
+    <p class="sub">A managed services group with four entities in three countries now consolidates itself every night.</p>
+    <h2>The problem</h2><p>Four entities kept their books in separate accounting systems, in five currencies. Each month, consolidating them took five to seven days of spreadsheet work, and the management pack was hard to check.</p><h2>What we did</h2><p>We built a secure reporting system that collects the figures from every entity overnight, matches up the transactions between group companies, and produces a consolidated view. Every adjustment is recorded, and every figure can be reviewed and queried by the right person.</p><p>Leadership looks at the same live screen, with each person seeing only what they should.</p>
+    <figure class="figure"><img src="{% static 'img/msp.png' %}" alt="Mock-up of a consolidated group profit and loss dashboard"><figcaption>Illustrative screen. All figures are dummy data.</figcaption></figure>
+    <h2>How it compares with the usual approach</h2>
+    <div class="table-wrap"><table class="compare">
+      <thead><tr><th>What</th><th>What we built</th><th>The usual approach</th></tr></thead>
+      <tbody><tr><td><strong>Consolidation</strong></td><td>Automatic, every night</td><td>Five to seven days of manual work each month</td></tr><tr><td><strong>Group transactions</strong></td><td>Matched automatically, differences flagged</td><td>Reconciled by eye</td></tr><tr><td><strong>Audit trail</strong></td><td>Every adjustment recorded</td><td>Changes made in cells with no history</td></tr><tr><td><strong>Access</strong></td><td>Role-based, each person sees their own view</td><td>One file, everyone sees everything or nothing</td></tr></tbody>
+    </table></div>
+    <h2>The result</h2>
+    <div class="results"><div class="result"><strong>Days to overnight</strong><span>Monthly consolidation time</span></div><div class="result"><strong>4 entities</strong><span>In 3 countries, one view</span></div><div class="result"><strong>100%</strong><span>Of adjustments recorded</span></div><div class="result"><strong>308 of 308</strong><span>Pack checks tied out</span></div></div>
+    <p>The finance team reviews the numbers rather than building them.</p>
+    <p style="margin-top:2rem"><a class="btn btn-primary" href="mailto:stuart@testlane.ai">Talk to us about something similar</a></p>
   </div>
 </section>
 
 <footer class="footer">
-  <div class="container" style="text-align:center;">
-    <p><a href="/">← Back to Testlane.ai</a></p>
-    <p style="margin-top:var(--space-2);">&copy; 2026 Testlane Ltd.</p>
+  <div class="container">
+    <div class="cols">
+      <div>Testlane Ltd. Company No 16609167, registered in England and Wales.</div>
+      <div><a href="mailto:stuart@testlane.ai">stuart@testlane.ai</a></div>
+    </div>
+    <p style="margin-top:1rem">&copy; 2026 Testlane Ltd.</p>
   </div>
 </footer>
-
 </body>
 </html>

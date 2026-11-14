@@ -1,0 +1,92 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A UK trade distributor now claims back what its national carrier gets wrong, on time and without anyone chasing.">
+  <title>Service improvement with a national freight carrier | Testlane</title>
+  <link rel="stylesheet" href="{% static 'css/design-system.css' %}">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav-logo">Testlane</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('nav-links-open');"><span></span><span></span><span></span></button>
+      <div class="nav-links">
+        <a href="/#what-we-do">What we do</a>
+        <a href="/#work">Our work</a>
+        <a href="/how-we-build/">How we build</a>
+        <a href="/about/">About</a>
+        <a href="mailto:stuart@testlane.ai">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section class="study">
+  <div class="container narrow">
+    <a class="back" href="/#work">Back to our work</a>
+    <div class="eyebrow">Distribution</div>
+    <h1>Service improvement with a national freight carrier</h1>
+    <p class="sub">A UK trade distributor now claims back what its national carrier gets wrong, on time and without anyone chasing.</p>
+
+    <h2>The problem</h2>
+    <p>The distributor sends about 600 consignments a month through a national carrier, at roughly £20,000 a month. When the carrier gets things wrong, it only refunds what it is asked for, and only inside tight time limits that differ by type of claim. Late morning deliveries, surcharges on business addresses, re-weigh charges and short or lost goods were all costing money that nobody had the time to claim.</p>
+
+    <h2>What we did</h2>
+    <p>We put AI into the billing and claims process itself. A set of scheduled tasks now runs the cycle largely unattended:</p>
+    <ul>
+      <li>Delivery scans and despatch data flow into a central data warehouse every hour.</li>
+      <li>Every invoice line is checked against the agreed rate card each week, including awkward pricing for mixed pallets and long items.</li>
+      <li>Late deliveries are found each morning and claimed within the time limit.</li>
+      <li>Lost and damaged goods are picked up each week, the proof is gathered, and a claim is prepared.</li>
+      <li>Every claim sits in one ledger, from raised to credited, refused or expired, so nothing is raised twice and nothing is forgotten.</li>
+    </ul>
+    <p style="margin-top:1rem">The finance director approves claims and exceptions. The AI does the reading, checking and drafting. There are safety stops too: if a run looks wrong, it sends nothing and says so.</p>
+
+    <figure class="figure"><img src="{% static 'img/freight.png' %}" alt="Mock-up of a claims ledger showing items raised, credited and still open"><figcaption>Illustrative screen. Values are dummy data.</figcaption></figure>
+
+    <h2>Which AI did what</h2>
+    <ul>
+      <li><strong>A reasoning model</strong> reads invoices, emails and delivery records, spots mispricing, and writes plain-English claims that quote the contract.</li>
+      <li><strong>A small, fast model</strong> handles the repetitive checking and sorting, which keeps running costs down.</li>
+      <li><strong>The data warehouse</strong> holds the delivery, invoice and claim records, so every answer comes from the same numbers.</li>
+    </ul>
+
+    <h2>How it compares with the usual approach</h2>
+    <div class="table-wrap"><table class="compare">
+      <thead><tr><th>What</th><th>What we built</th><th>The usual approach</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Invoice checking</strong></td><td>Every line checked every week</td><td>Spot checks, if anyone has time</td></tr>
+        <tr><td><strong>Time limits</strong></td><td>Tracked automatically, claims raised inside them</td><td>Found out after the deadline has passed</td></tr>
+        <tr><td><strong>Evidence</strong></td><td>Delivery records and proof gathered automatically</td><td>Hunted down claim by claim</td></tr>
+        <tr><td><strong>Follow-up</strong></td><td>Agreed credits chased until they arrive</td><td>Assumed to have happened</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>The result</h2>
+    <div class="results">
+      <div class="result"><strong>£1.7k credited</strong><span>Recovered in the first ten weeks, with a further £1.9k still being pursued</span></div>
+      <div class="result"><strong>270 items</strong><span>Claimed and tracked in one ledger</span></div>
+      <div class="result"><strong>£4.6k</strong><span>Hidden cost of the carrier's failures that the data brought to light</span></div>
+      <div class="result"><strong>One rulebook</strong><span>Changed in one place, followed by every task</span></div>
+    </div>
+    <p>The early lesson was a hard one. Many claims raised before the time-limit discipline existed were refused as out of time. That is why the daily and weekly cycles exist: the process now works to the clock rather than to anyone's memory.</p>
+    <p>The data also showed where the real opportunity lies. Long items are about 28% of consignments but 63% of failures and 72% of the cost of resending. Moving them to the company's own fleet looks worth more than any single claim, and that decision is now with the management team.</p>
+    <p style="margin-top:2rem"><a class="btn btn-primary" href="mailto:stuart@testlane.ai">Talk to us about a similar process</a></p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="cols">
+      <div>Testlane Ltd. Company No 16609167, registered in England and Wales.</div>
+      <div><a href="mailto:stuart@testlane.ai">stuart@testlane.ai</a></div>
+    </div>
+    <p style="margin-top:1rem">&copy; 2026 Testlane Ltd.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,86 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How Testlane builds AI into business processes: the right model for each job, one data home, people approving the money.">
+  <title>How we build | Testlane</title>
+  <link rel="stylesheet" href="{% static 'css/design-system.css' %}">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav-logo">Testlane</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('nav-links-open');"><span></span><span></span><span></span></button>
+      <div class="nav-links">
+        <a href="/#what-we-do">What we do</a>
+        <a href="/#work">Our work</a>
+        <a href="/how-we-build/">How we build</a>
+        <a href="/about/">About</a>
+        <a href="mailto:stuart@testlane.ai">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section>
+  <div class="container narrow">
+    <div class="eyebrow">How we build</div>
+    <h1>The Hermes method</h1>
+    <p class="sub">How we put AI into a business process and keep it working.</p>
+
+    <h2>Start with the process, not the technology</h2>
+    <p>We begin with one real process where money leaks or time disappears: an invoice check, a monthly pack, a stack of paperwork. We build for that, prove it pays, then move to the next. Each step is added after a real case shows it is needed.</p>
+
+    <h2>One home for the data</h2>
+    <ul>
+      <li><strong>A cloud data warehouse</strong> holds the shared company data: invoices, deliveries, ledgers, claims. Everyone, human or AI, works from the same numbers.</li>
+      <li><strong>A lightweight local analytics database</strong> handles fast, private work on files that should not leave your own equipment.</li>
+    </ul>
+
+    <h2>The right model for each job</h2>
+    <p>No single AI is best at everything, and none of them is the cheapest for everything either. We are not tied to one provider. We pick the best model for each task and swap it when something better comes along.</p>
+    <div class="table-wrap"><table class="compare models">
+      <thead><tr><th>Job</th><th>Type of model</th><th>Example and why</th></tr></thead>
+      <tbody>
+        <tr><td data-label=""><strong>Searching and research</strong></td><td data-label="Type of model: ">A search model that cites its sources</td><td data-label="Example: ">Perplexity. When we need a current fact, such as a market price, a regulation or a supplier, it gives an answer with links we can check.</td></tr>
+        <tr><td data-label=""><strong>Hard reasoning and review</strong></td><td data-label="Type of model: ">A top-tier reasoning model</td><td data-label="Example: ">Claude. It reads contracts, checks invoices and challenges other models' work. Worth paying more for when a mistake is expensive.</td></tr>
+        <tr><td data-label=""><strong>Routine sorting and checking</strong></td><td data-label="Type of model: ">A small, fast, cheap model</td><td data-label="Example: ">A lightweight Claude model. It triages emails, classifies documents and does repetitive checks at a fraction of the cost.</td></tr>
+        <tr><td data-label=""><strong>Images</strong></td><td data-label="Type of model: ">An image generation model</td><td data-label="Example: ">Seedream. We used it to draw the characters for a children's game, because it holds a consistent style across hundreds of frames.</td></tr>
+        <tr><td data-label=""><strong>Meetings and voice</strong></td><td data-label="Type of model: ">A speech model that runs on your own equipment</td><td data-label="Example: ">Whisper. Audio is turned into text without leaving the building, which matters for boards and legal discussions.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>One model does the work, another checks it</h2>
+    <p>For anything that matters, one model produces the answer and a different one reviews it. The reviewer is set up to find problems, not to agree. It catches mistakes a single model will miss, and it is cheap compared with a wrong figure reaching a board or a supplier.</p>
+
+    <h2>Run on a schedule, with rules in one place</h2>
+    <ul>
+      <li>Tasks run on a timetable, hourly, daily or weekly, each owning one job and one deadline.</li>
+      <li>All the rules live in a single rulebook that every task reads at the start of each run. To change how the system behaves, you change the rulebook, not a dozen separate instructions.</li>
+      <li>Every run leaves a written record, so anyone can pick up exactly where the last one stopped.</li>
+    </ul>
+
+    <h2>People approve the money</h2>
+    <p>AI does the reading, checking and drafting. A person approves anything that spends money, goes to an outside party for the first time, or cannot be undone. Safety stops are built in: if something looks wrong, the system sends nothing and says why.</p>
+
+    <h2>Your data stays yours</h2>
+    <p>Sensitive information stays on systems you control, behind proper access controls. Because we are not tied to one AI provider, we can choose where each job runs, including on your own equipment.</p>
+
+    <p style="margin-top:2.5rem"><a class="btn btn-primary" href="mailto:stuart@testlane.ai">Talk to us about your process</a></p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="cols">
+      <div>Testlane Ltd. Company No 16609167, registered in England and Wales.</div>
+      <div><a href="mailto:stuart@testlane.ai">stuart@testlane.ai</a></div>
+    </div>
+    <p style="margin-top:1rem">&copy; 2026 Testlane Ltd.</p>
+  </div>
+</footer>
+</body>
+</html>

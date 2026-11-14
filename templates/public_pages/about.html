@@ -1,68 +1,49 @@
-{% load static %}
-<!DOCTYPE html>
+{% load static %}<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Testlane.ai</title>
+  <meta name="description" content="About Testlane Ltd and how we work.">
+  <title>About Testlane</title>
   <link rel="stylesheet" href="{% static 'css/design-system.css' %}">
 </head>
 <body>
-
-<header class="container">
-  <nav class="nav">
-    <a href="/" class="nav-logo">Testlane<span>.ai</span></a>
-        <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('nav-links-open');">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links">
-      <a href="/">← Back to Home</a>
-    </div>
-  </nav>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav-logo">Testlane</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('nav-links-open');"><span></span><span></span><span></span></button>
+      <div class="nav-links">
+        <a href="/#what-we-do">What we do</a>
+        <a href="/#work">Our work</a>
+        <a href="/how-we-build/">How we build</a>
+        <a href="/about/">About</a>
+        <a href="mailto:stuart@testlane.ai">Contact</a>
+      </div>
+    </nav>
+  </div>
 </header>
 
-<section style="padding-top:var(--space-12);padding-bottom:var(--space-12);">
-  <div class="container" style="max-width:40rem;">
-    <div class="section-label">About</div>
-    <h1 style="font-size:clamp(2rem,4vw,3rem);margin-bottom:var(--space-6);">About Testlane.ai</h1>
-
-    <div class="card" style="margin-bottom:var(--space-8);">
-      <h3>Sovereign AI & Autonomous Operations</h3>
-      <p style="color:var(--text-secondary);margin-top:var(--space-3);">
-        Testlane.ai delivers high-trust, privacy-first AI operations for regulated enterprises. We deploy dedicated on-premise and private-cloud infrastructure — zero public cloud training data leakage, zero SaaS sprawl.
-      </p>
-      <p style="color:var(--text-secondary);margin-top:var(--space-3);">
-        Our approach combines Terraform-defined infrastructure, Cloudflare Zero Trust perimeters, and local AI runtimes to ensure your data never leaves your control.
-      </p>
-    </div>
-
-    <div class="card" style="margin-bottom:var(--space-8);">
-      <h3>Contact</h3>
-      <p style="color:var(--text-secondary);margin-top:var(--space-3);">
-        Whether you need a multi-entity finance warehouse, sovereign meeting intelligence, or a complete autonomous operations stack — let's talk about running AI on your terms.
-      </p>
-      <p style="margin-top:var(--space-4);">
-        <strong style="color:var(--text-primary);">Email:</strong> <a href="mailto:stuart@testlane.ai" style="color:var(--accent-cyan);">stuart@testlane.ai</a>
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Company</h3>
-      <p style="color:var(--text-secondary);margin-top:var(--space-3);">
-        Testlane Ltd<br>
-        Company No 16609167<br>
-        Registered in England and Wales
-      </p>
-    </div>
+<section>
+  <div class="container narrow">
+    <h1>About Testlane</h1>
+    <p style="margin-top:1.25rem">Testlane is a small consultancy led by a finance director. We build AI into the processes that cost businesses time and money, and we measure what it saves.</p>
+    <p>We are a small team, so you deal with the person doing the work. We are careful with data. Where information is sensitive, we keep it on equipment you control rather than passing it to a third party.</p>
+    <h2 style="margin-top:2.5rem">Get in touch</h2>
+    <p>Email <a href="mailto:stuart@testlane.ai">stuart@testlane.ai</a> and tell us what you are trying to fix.</p>
+    <h2 style="margin-top:2.5rem">Company details</h2>
+    <p>Testlane Ltd<br>Company No 16609167<br>Registered in England and Wales</p>
   </div>
 </section>
 
 <footer class="footer">
-  <div class="container" style="text-align:center;">
-    <p><a href="/">← Back to Testlane.ai</a></p>
-    <p style="margin-top:var(--space-2);">&copy; 2026 Testlane Ltd. All rights reserved.</p>
+  <div class="container">
+    <div class="cols">
+      <div>Testlane Ltd. Company No 16609167, registered in England and Wales.</div>
+      <div><a href="mailto:stuart@testlane.ai">stuart@testlane.ai</a></div>
+    </div>
+    <p style="margin-top:1rem">&copy; 2026 Testlane Ltd.</p>
   </div>
 </footer>
-
 </body>
 </html>

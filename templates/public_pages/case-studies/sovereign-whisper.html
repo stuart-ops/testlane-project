@@ -34,14 +34,31 @@
     <h2>The problem</h2><p>Boardrooms and legal discussions produce recordings that cannot safely be sent to an online transcription service. Using one risks confidentiality and, in some cases, legal privilege. The alternative is a person typing minutes from memory and scribbled notes days later.</p><h2>What we did</h2><p>Meetings are recorded on a phone and the file moves straight to a server inside the client's own office. The recording is turned into text there, drafted into minutes with a clear list of actions, and sent to the right people as a PDF.</p><p>At no point does the audio pass through a third party. Actions go straight onto the client's own task board, so nothing gets lost between the meeting and the follow-up.</p>
     <figure class="figure"><img src="{% static 'img/whisper.png' %}" alt="Mock-up of draft board minutes with an actions list"><figcaption>Illustrative draft minutes. All names and content are dummy data.</figcaption></figure>
     <h2>Which AI did what</h2>
-    <ul><li><strong>A speech model on the client's own equipment</strong> turns the recording into text.</li><li><strong>A reasoning model</strong> drafts the minutes and the actions list from that text.</li></ul>
+    <ul>
+      <li><strong>A speech model on the client's own equipment</strong> turns the recording into text.</li>
+      <li><strong>A reasoning model</strong> drafts the minutes and the actions list from that text.</li>
+      <li><strong>A translation model</strong> can be switched on when a meeting is in another language, or when minutes are needed in one.</li>
+    </ul>
+
+    <h2>Not tied to any one AI provider</h2>
+    <p>Plenty of AI providers can turn a meeting into minutes. What matters is what you are signing up to when you choose one. We built this system so that you are not signing up to anything.</p>
+    <ul>
+      <li><strong>No subscriptions needed.</strong> It runs on the company's own equipment, so there is no monthly licence per user and no charge per minute of audio.</li>
+      <li><strong>Runs on almost any device.</strong> It can be deployed on a server, a spare computer or a laptop, whatever the business already has.</li>
+      <li><strong>Not locked to one model.</strong> Most off-the-shelf tools tie a whole company to a single AI for every member of staff, and changing it later is painful. Here, the speech, reasoning and translation models are separate parts that can be swapped, so we choose the best one for each job and replace it when something better arrives.</li>
+      <li><strong>The right model for the task.</strong> A board that needs meetings in several languages gets a translation model. A team that needs speed over polish gets a lighter one. It is a setting, not a rebuild.</li>
+    </ul>
+
     <h2>How it compares with the usual approach</h2>
     <div class="table-wrap"><table class="compare">
       <thead><tr><th>What</th><th>What we built</th><th>The usual approach</th></tr></thead>
-      <tbody><tr><td><strong>Recording</strong></td><td>Stays on the company's own equipment</td><td>Online services send audio to a third party</td></tr><tr><td><strong>Minutes</strong></td><td>Drafted automatically, within fifteen minutes</td><td>Typed up from notes, often days later</td></tr><tr><td><strong>Actions</strong></td><td>Captured as a list with owners and dates</td><td>Buried in the text of the minutes</td></tr><tr><td><strong>Cost</strong></td><td>No per-minute fees</td><td>Transcription services charge by the hour of audio</td></tr></tbody>
+      <tbody><tr><td><strong>Recording</strong></td><td>Stays on the company's own equipment</td><td>Online services send audio to a third party</td></tr><tr><td><strong>Minutes</strong></td><td>Drafted automatically, within fifteen minutes</td><td>Typed up from notes, often days later</td></tr><tr><td><strong>Actions</strong></td><td>Captured as a list with owners and dates</td><td>Buried in the text of the minutes</td></tr><tr><td><strong>Cost</strong></td><td>No subscriptions and no per-minute fees</td><td>Per-user licences, or charges by the hour of audio</td></tr>
+        <tr><td><strong>Choice of AI</strong></td><td>Each model can be swapped when something better arrives</td><td>The whole company is tied to one provider's model, and changing it is difficult</td></tr>
+        <tr><td><strong>Languages</strong></td><td>A translation model can be selected when required</td><td>Whatever the one provider happens to support</td></tr>
+        <tr><td><strong>Where it runs</strong></td><td>Almost any device the business already owns</td><td>The provider's cloud</td></tr></tbody>
     </table></div>
     <h2>The result</h2>
-    <div class="results"><div class="result"><strong>Zero</strong><span>Audio leaving the building</span></div><div class="result"><strong>15 minutes</strong><span>To a draft set of minutes</span></div><div class="result"><strong>One list</strong><span>Of actions, with owners</span></div><div class="result"><strong>No fees</strong><span>Per meeting or per minute</span></div></div>
+    <div class="results"><div class="result"><strong>Zero</strong><span>Audio leaving the building</span></div><div class="result"><strong>15 minutes</strong><span>To a draft set of minutes</span></div><div class="result"><strong>One list</strong><span>Of actions, with owners</span></div><div class="result"><strong>No subscriptions</strong><span>No per-user licences and no per-minute fees</span></div></div>
     <p>Minutes are with the board while the meeting is still fresh, and confidentiality is protected by design rather than by trust in a supplier.</p>
     <p style="margin-top:2rem"><a class="btn btn-primary" href="mailto:stuart@testlane.ai">Talk to us about something similar</a></p>
   </div>
